@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "agent_architecture/version"
+require_relative 'agent_architecture/version'
 
 module Ad
   module AgentArchitecture

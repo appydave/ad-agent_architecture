@@ -1,3 +1,10 @@
+## [0.0.4](https://github.com/appydave/ad-agent_architecture/compare/v0.0.3...v0.0.4) (2024-06-26)
+
+
+### Bug Fixes
+
+* update schema ([dd2d6fb](https://github.com/appydave/ad-agent_architecture/commit/dd2d6fbd1eb477da5e44f3d5417aa05ec291fb25))
+
 ## [0.0.3](https://github.com/appydave/ad-agent_architecture/compare/v0.0.2...v0.0.3) (2024-06-26)
 
 

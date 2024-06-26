@@ -1,3 +1,10 @@
+## [0.0.3](https://github.com/appydave/ad-agent_architecture/compare/v0.0.2...v0.0.3) (2024-06-26)
+
+
+### Bug Fixes
+
+* preliminary requirments WIP ([e397071](https://github.com/appydave/ad-agent_architecture/commit/e397071416ac2f54f63b6f20c986099216f2e4db))
+
 ## [0.0.2](https://github.com/appydave/ad-agent_architecture/compare/v0.0.1...v0.0.2) (2024-06-26)
 
 

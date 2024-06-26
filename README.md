@@ -38,6 +38,8 @@ See all [usage examples](./USAGE.md)
 
 ## Requirements
 
+[Specification for the AppyDave - Agent Architecture Schema](./docs/requirements.md)
+
 
 
 

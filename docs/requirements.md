@@ -1,99 +1,86 @@
-### Analysis and Clarification of Workflow Documents
 
-The provided documents outline structured workflows for creating YouTube scripts and Medium articles using AI tools and human input. Here’s a detailed analysis based on the initial documents and the additional information provided:
+## Schema for AI Agents
 
-### Key Insights from Both Documents
+### Entity Relationship Diagram
 
-1. **Human-AI Collaboration**:
-   - The YouTube script workflow is a complete list of steps performed primarily by AI (ChatGPT), with minimal human input, passed through various prompts to generate the output.
-   - The Medium article workflow is similar but not fully documented, indicating the same concept for generating content from a transcript.
-   - These workflows are common in agent automation frameworks, where AI performs most tasks, with humans providing quality assurance.
+![Schema](./erd.svg)
 
-2. **Parameter Collection**:
-   - Parameters are collected and built over time, starting with a simple project title (simple_title) for YouTube and a transcript for Medium articles.
-   - Static input parameters like brand and target audience are crucial for defining the content's direction.
+### Static Workflow Definition
 
-3. **Workflow Phases**:
-   - Both workflows consist of distinct phases: research and script/article writing.
-   - The research phase involves gathering information and generating potential content elements (titles, factsheets, topics).
-   - The writing phase focuses on drafting, revising, and finalizing the content.
+#### Table: workflows
+| Field       | Type   | Description                         |
+|-------------|--------|-------------------------------------|
+| id          | string | Unique identifier for the workflow  |
+| name        | string | The name of the workflow            |
+| description | string | A brief description of the workflow |
 
-4. **Input Parameters**:
-   - Parameters range from simple (single values) to complex (arrays of values).
-   - Initial parameters are relatively simple but grow in complexity as the workflow progresses.
+#### Table: sections
+| Field       | Type    | Description                            |
+|-------------|---------|----------------------------------------|
+| id          | string  | Unique identifier for the section      |
+| name        | string  | The name of the section                |
+| description | string  | A brief description of the section     |
+| order       | integer | The order of the section in the workflow|
+| workflow_id | string  | Foreign key referencing workflows      |
 
-5. **Prompts and Outputs**:
-   - Prompts are human-written text files with input parameter placeholders.
-   - Outputs can be simple (text) or complex (arrays of values such as engaging_titles[], keywords[], topics[]).
-   - Complex outputs generate new parameters for further steps.
+#### Table: steps
+| Field       | Type    | Description                         |
+|-------------|---------|-------------------------------------|
+| id          | string  | Unique identifier for the step      |
+| name        | string  | The name of the step                |
+| description | string  | A brief description of the step     |
+| order       | integer | The order of the step in the section|
+| section_id  | string  | Foreign key referencing sections    |
+| prompt      | string  | The template string for the prompt  |
 
-6. **Human Decision Points**:
-   - Certain steps require human decisions, such as selecting the focus_video_type from multiple generated topics.
-   - Human input is crucial for quality assurance and final content selection.
+#### Table: attributes
+| Field       | Type    | Description                                 |
+|-------------|---------|---------------------------------------------|
+| id          | string  | Unique identifier for the attribute         |
+| name        | string  | The name of the attribute                   |
+| type        | string  | The type of the attribute (e.g., string)    |
+| is_array    | boolean | Indicates whether the attribute is an array |
+| workflow_id | string  | Foreign key referencing workflows           |
 
-7. **Iterative and Parallel Processes**:
-   - Workflows often involve iterative steps, refining outputs until satisfactory results are achieved.
-   - Parallel workflows can be initiated to explore multiple options simultaneously, using the same initial parameters but diverging paths.
+#### Table: input_attributes
+| Field       | Type    | Description                        |
+|-------------|---------|------------------------------------|
+| step_id     | string  | Foreign key referencing steps      |
+| attribute_id| string  | Foreign key referencing attributes |
 
-### Detailed Analysis Document
+#### Table: output_attributes
+| Field       | Type    | Description                        |
+|-------------|---------|------------------------------------|
+| step_id     | string  | Foreign key referencing steps      |
+| attribute_id| string  | Foreign key referencing attributes |
 
-#### Document 1: YouTube Script Creation Workflow
+### Dynamic Workflow Execution
 
-- **Parameters**:
-  - Initial: simple_title (e.g., "Fotor AI tool")
-  - Dynamic: Built over time (basic_factsheet, video_types[], focus_video_type, expanded_factsheet, topics[], keywords[], engaging_titles[], basic_script, basic_transcript, transcript_qa)
+#### Table: workflow_runs
+| Field       | Type   | Description                           |
+|-------------|--------|---------------------------------------|
+| id          | string | Unique identifier for the workflow run|
+| workflow_id | string | Foreign key referencing workflows     |
 
-- **Phases**:
-  - **Research Phase**:
-    1. Generate potential titles using YouTube search.
-    2. Create a detailed factsheet using web search and AI tools.
-    3. Identify video types based on factsheet.
-    4. Expand factsheet with focus video type.
-    5. Generate engaging titles, keywords, and topics.
-  - **Script Writing Phase**:
-    1. Create basic script.
-    2. Clean and revise transcript.
-    3. Fact-check and finalize transcript.
+#### Table: section_runs
+| Field           | Type   | Description                            |
+|-----------------|--------|----------------------------------------|
+| id              | string | Unique identifier for the section run  |
+| workflow_run_id | string | Foreign key referencing workflow_runs  |
+| section_id      | string | Foreign key referencing sections       |
 
-- **Human Involvement**:
-  - Decision on focus_video_type.
-  - Final review and quality assurance.
+#### Table: step_runs
+| Field            | Type    | Description                                                         |
+|------------------|---------|---------------------------------------------------------------------|
+| id               | string  | Unique identifier for the step run                                  |
+| section_run_id   | string  | Foreign key referencing section_runs                                |
+| step_id          | string  | Foreign key referencing steps                                       |
+| branch_number    | integer | Branch number to distinguish different instances (branches) of the same step |
 
-#### Document 2: Medium Article Creation Workflow
-
-- **Parameters**:
-  - Initial: transcript (YouTube transcript)
-  - Dynamic: article_recomendations, target_audience, outline, article_first_draft, outline_first_draft, introductions[], outline_first_draft_updated_with_intro
-
-- **Phases**:
-  - **Research Phase**:
-    1. Generate article recommendations from transcript.
-    2. Draft the article based on target audience and recommendations.
-    3. Create preliminary outline from transcript.
-  - **Writing Phase**:
-    1. Write the first draft following the outline.
-    2. Generate and critique various introductions.
-    3. Revise and update outline with selected introduction.
-
-- **Human Involvement**:
-  - Selection of introduction.
-  - Final review and quality assurance.
-
-### Additional Insights
-
-1. **Parameter Complexity**:
-   - Parameters evolve from simple inputs to complex structures, incorporating arrays of values that influence subsequent steps.
-
-2. **Iterative Processes**:
-   - Both workflows benefit from iterative refinement, ensuring high-quality outputs before moving to the next phase.
-
-3. **Parallel Workflows**:
-   - Exploring multiple options simultaneously (e.g., different video types) can provide richer content and better decision-making.
-
-4. **Independent Subtasks**:
-   - Certain elements (like generating introductions for Medium articles) can operate independently but feed back into the main workflow, enhancing flexibility and adaptability.
-
-5. **Cyclic Steps**:
-   - Iterative cycles help refine outputs continuously until optimal results are achieved, demonstrating a robust approach to content creation.
-
-This structured approach to content creation leverages AI for efficiency while ensuring human oversight for quality, making it a highly effective workflow for producing engaging YouTube scripts and Medium articles.
+#### Table: attribute_values
+| Field         | Type   | Description                             |
+|---------------|--------|-----------------------------------------|
+| id            | string | Unique identifier for the attribute value|
+| attribute_id  | string | Foreign key referencing attributes      |
+| step_run_id   | string | Foreign key referencing step_runs       |
+| value         | text   | The actual value of the attribute during the step execution |

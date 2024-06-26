@@ -6,7 +6,7 @@ GEM_NAME = 'ad_agent_architecture'
 
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
-require 'ad-agent_architecture/version'
+require 'ad/agent_architecture/version'
 
 RSpec::Core::RakeTask.new(:spec)
 

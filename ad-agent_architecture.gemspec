@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'lib/ad-agent_architecture/version'
+require_relative 'lib/ad/agent_architecture/version'
 
 Gem::Specification.new do |spec|
   spec.required_ruby_version  = '>= 3.0'

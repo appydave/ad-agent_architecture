@@ -6,7 +6,7 @@ require 'simplecov'
 
 SimpleCov.start
 
-require 'ad-agent_architecture'
+require 'ad/agent_architecture'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

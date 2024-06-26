@@ -5,7 +5,8 @@ RSpec.describe Ad::AgentArchitecture do
     expect(Ad::AgentArchitecture::VERSION).not_to be_nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  it 'has a standard error' do
+    expect { raise Ad::AgentArchitecture::Error, 'some message' }
+      .to raise_error('some message')
   end
 end

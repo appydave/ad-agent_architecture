@@ -1,3 +1,65 @@
+# AppyDave - Agent Architecture Schema
+
+## Purpose
+
+The application is designed to handle structured workflows for building documents or text-based assets using LLMs from OpenAi, Anthropic and others. It should be adaptable to any workflow that follows a structured concept or a series of steps.
+
+## Sample Workflows
+- YouTube titles
+- YouTube scripts
+- YouTube transcription to Medium, LinkedIn, etc.
+
+## Key Components
+
+### Static Workflow Definition
+- **Workflows**: Define a series of tasks to achieve a specific goal.
+- **Sections**: Subdivisions within workflows to organize steps logically.
+- **Steps**: Individual tasks within a section, each associated with an AI prompt and various input/output attributes.
+- **Attributes**: Parameters used in steps, which can be simple values or arrays.
+- **Input/Output Attributes**: Map attributes to steps as either inputs or outputs.
+
+### Dynamic Workflow Execution
+- **Workflow Runs**: Instances of workflow executions.
+- **Section Runs**: Instances of section executions within a workflow run.
+- **Step Runs**: Instances of step executions within a section run, supporting multiple branches.
+- **Attribute Values**: Store the values of attributes during step executions.
+
+## Features
+
+### Schema Creation and Models
+- Use Sequel and SQLite to define and manage the database schema.
+- Models are defined for workflows, sections, steps, attributes, and their relationships.
+
+### Testing and Validation
+- Unit tests to verify the schema and associations using RSpec.
+- Guard setup to automatically run tests when certain files are modified.
+
+### Data Management
+- Methods to export the database schema and data to JSON files for backup.
+- Methods to restore the database from JSON files for easy editing and re-importing.
+
+## Initial Workflows
+- These include YouTube video scripts, YouTube title creation, and transcription to articles.
+- These workflows serve as examples and validation for the broader concept.
+
+## Implementation Details
+- **Database**: Use SQLite with Sequel for ORM.
+- **Code Structure**: Organize code into modules and classes for database schema creation and model definitions.
+- **Testing**: Ensure models and associations are correctly implemented and tested.
+
+## Next Steps
+
+### Refine DSL for Static Workflows
+- Enhance the DSL to create and update static workflows.
+- Ensure it updates the database and exports workflows in JSON/YAML format.
+- Implement rendering of the workflow structure as HTML.
+
+### Plan Dynamic Execution
+- Determine the approach for executing workflows dynamically.
+- Decide on using a DSL or a web application for this purpose.
+
+This summary should help guide the development and focus on the core objectives and future directions.
+
 
 ## Schema for AI Agents
 

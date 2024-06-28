@@ -1,3 +1,10 @@
+## [0.0.6](https://github.com/appydave/ad-agent_architecture/compare/v0.0.5...v0.0.6) (2024-06-28)
+
+
+### Bug Fixes
+
+* update requirements documentation ([e80d072](https://github.com/appydave/ad-agent_architecture/commit/e80d0728652c7a4fdeb014324f196e0044cb13af))
+
 ## [0.0.5](https://github.com/appydave/ad-agent_architecture/compare/v0.0.4...v0.0.5) (2024-06-28)
 
 

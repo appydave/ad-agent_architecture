@@ -1,3 +1,11 @@
+## [0.0.5](https://github.com/appydave/ad-agent_architecture/compare/v0.0.4...v0.0.5) (2024-06-28)
+
+
+### Bug Fixes
+
+* add sqlite3, sequal and setup a schema ([a8fa9c9](https://github.com/appydave/ad-agent_architecture/commit/a8fa9c9ff29ed223644d3622bd46ca5d626af9a9))
+* add sqlite3, sequal and setup a schema ([87ded1e](https://github.com/appydave/ad-agent_architecture/commit/87ded1e6886d3190fc83ecaa4e215bacf044378f))
+
 ## [0.0.4](https://github.com/appydave/ad-agent_architecture/compare/v0.0.3...v0.0.4) (2024-06-26)
 
 

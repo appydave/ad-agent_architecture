@@ -40,6 +40,6 @@ Gem::Specification.new do |spec|
   # spec.extensions    = ['ext/ad_agent_architecture/extconf.rb']
 
   spec.add_dependency 'k_log', '~> 0'
-  # spec.add_dependency 'k_type', '~> 0'
-  # spec.add_dependency 'k_util', '~> 0'
+  spec.add_dependency 'sequel', '~> 5'
+  spec.add_dependency 'sqlite3', '~> 2'
 end

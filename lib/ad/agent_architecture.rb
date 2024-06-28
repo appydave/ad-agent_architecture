@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
+require 'sequel'
+require 'sqlite3'
+
 require 'ad/agent_architecture/version'
+require 'ad/agent_architecture/db/create_schema'
+
+DB = Sequel.sqlite
+
+Ad::AgentArchitecture::Database::CreateSchema.new(DB).execute
+
+require 'ad/agent_architecture/db/models'
 
 module Ad
   module AgentArchitecture

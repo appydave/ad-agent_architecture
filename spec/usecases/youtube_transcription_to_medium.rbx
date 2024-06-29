@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-AgentDsl.create(name: 'YouTube Transcript to Medium Article') do
+dsl = Agent.create(name: 'YouTube Transcript to Medium Article') do
   attributes do
     attribute :transcript, type: :string
     attribute :outline, type: :string
@@ -32,7 +32,7 @@ AgentDsl.create(name: 'YouTube Transcript to Medium Article') do
     end
 
     step(name: 'Update Draft with Intro') do
-      note 'This step is a loop based on the intro_variations attribute, a new branch is created for each variation'
+      # note 'This step is a loop based on the intro_variations attribute, a new branch is created for each variation'
       input :first_draft                                                                        , file: '02-2-first-draft-OUTPUT.md'
       input :intro_variation                                                                    , value: 'Here is a cool introduction'
       prompt 'Update [first_draft] with a better intro [intro_variation].'                      , file: '04-1-intro-update.md'
@@ -46,8 +46,18 @@ AgentDsl.create(name: 'YouTube Transcript to Medium Article') do
     end
 
     step(name: 'Combine Intro Analysis') do
-      note 'This is a custom place holder for intro analisis for each intro variation'
+      # note 'This is a custom place holder for intro analisis for each intro variation'
       output :intro_analysis_combined , file: '06-2-intro-analysis-combined.md'
     end
   end
 end
+
+dsl
+  .save
+  .save_json('workflow.json')
+  .save_yaml('workflow.yaml')
+
+workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Transcript to Medium Article')
+
+Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
+Ad::AgentArchitecture::Report::WorkflowListReport.new.print

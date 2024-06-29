@@ -55,11 +55,11 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentWorkflowDsl do
       .save_json('workflow.json')
       .save_yaml('workflow.yaml')
 
-    # # Assuming you have a workflow object available
-    Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Transcript to Medium Article')
+    # Assuming you have a workflow object available
+    workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Transcript to Medium Article')
 
-    # report = Ad::AgentArchitecture::Report::WorkflowDetailReport.new
-    # report.print(workflow)
+    report = Ad::AgentArchitecture::Report::WorkflowDetailReport.new
+    report.print(workflow)
 
     Ad::AgentArchitecture::Report::WorkflowListReport.new.print
   end

@@ -2,4 +2,5 @@
 
 puts 'Execute DSL'
 
+require 'pry'
 require 'ad/agent_architecture'

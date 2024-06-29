@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-dsl = AgentWorkflow.create(name: 'YouTube Title Creator') do
+dsl = Agent.create(name: 'YouTube Title Creator') do
   prompts do
     prompt :best_practice, path: 'youtube/title_creator/best_practice.md'
   end
@@ -8,11 +6,9 @@ dsl = AgentWorkflow.create(name: 'YouTube Title Creator') do
   attributes do
     attribute :start_title, type: :string
     attribute :start_keyword, type: :string
-    attribute :start_transcript, type: :string
+    attribute :transcript, type: :string
     attribute :potential_titles, type: :array
     attribute :working_title, type: :string
-    # attribute :basic_research, type: :string
-    # attribute :titles, type: :array
   end
 
   section(name: 'Research') do
@@ -21,9 +17,9 @@ dsl = AgentWorkflow.create(name: 'YouTube Title Creator') do
     end
 
     step(name: 'Basic titles') do
-      input :basic_title
-      input :basic_keyword
-      input :basic_transcript
+      input :start_title
+      input :start_keyword
+      input :transcript
       prompt <<~TEXT
         Keyword: [start_keyword]
         Title: [start_title]
@@ -46,11 +42,12 @@ dsl = AgentWorkflow.create(name: 'YouTube Title Creator') do
   end
 end
 
-
 dsl
   .save
   .save_json('workflow.json')
   .save_yaml('workflow.yaml')
 
+workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Title Creator')
 
+Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
 Ad::AgentArchitecture::Report::WorkflowListReport.new.print

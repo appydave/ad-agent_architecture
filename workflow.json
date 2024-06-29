@@ -1,78 +1,122 @@
 {
-  "name": "YouTube Title Creator",
+  "name": "YouTube Transcript to Medium Article",
   "sections": [
     {
-      "name": "Research",
+      "name": "Analysis",
       "order": 1,
       "steps": [
         {
-          "name": "Starting Context",
+          "name": "Generate Outline",
           "order": 1,
           "input_attributes": [
-
+            "transcript"
           ],
           "output_attributes": [
-
+            "outline"
           ],
-          "prompt": "best_practice"
+          "prompt": "Analyze [transcript] and generate a preliminary outline for a blog post."
         },
         {
-          "name": "Basic titles",
+          "name": "Write First Draft",
           "order": 2,
           "input_attributes": [
-            "basic_title",
-            "basic_keyword",
-            "basic_transcript"
+            "outline"
           ],
           "output_attributes": [
-            "potential_titles"
+            "first_draft"
           ],
-          "prompt": "Keyword: [start_keyword]\nTitle: [start_title]\n\nTranscript:\n\n[start_transcript]\n"
+          "prompt": "Write a blog post based on [outline]."
         },
         {
-          "name": "Working Title",
+          "name": "Generate Intros",
           "order": 3,
           "input_attributes": [
-            "potential_titles"
+            "first_draft"
           ],
           "output_attributes": [
-            "working_title"
-          ]
+            "intro_variations"
+          ],
+          "prompt": "Create 5 introduction variations for [first_draft]."
+        },
+        {
+          "name": "Update Draft with Intro",
+          "order": 4,
+          "input_attributes": [
+            "first_draft",
+            "intro_variation"
+          ],
+          "output_attributes": [
+            "second_draft"
+          ],
+          "prompt": "Update [first_draft] with a better intro [intro_variation]."
+        },
+        {
+          "name": "Analyse Intro",
+          "order": 5,
+          "input_attributes": [
+            "second_draft"
+          ],
+          "output_attributes": [
+            "intro_analysis"
+          ],
+          "prompt": "Analyze the article [second_draft] introduction"
+        },
+        {
+          "name": "Combine Intro Analysis",
+          "order": 6,
+          "input_attributes": [
+
+          ],
+          "output_attributes": [
+            "intro_analysis_combined"
+          ],
+          "prompt": ""
         }
       ]
     }
   ],
   "attributes": {
-    "start_title": {
-      "name": "start_title",
+    "transcript": {
+      "name": "transcript",
       "type": "string",
       "is_array": false
     },
-    "start_keyword": {
-      "name": "start_keyword",
+    "outline": {
+      "name": "outline",
       "type": "string",
       "is_array": false
     },
-    "start_transcript": {
-      "name": "start_transcript",
+    "first_draft": {
+      "name": "first_draft",
       "type": "string",
       "is_array": false
     },
-    "potential_titles": {
-      "name": "potential_titles",
+    "intro_variations": {
+      "name": "intro_variations",
       "type": "array",
       "is_array": false
     },
-    "working_title": {
-      "name": "working_title",
+    "intro_variation": {
+      "name": "intro_variation",
+      "type": "string",
+      "is_array": false
+    },
+    "second_draft": {
+      "name": "second_draft",
+      "type": "string",
+      "is_array": false
+    },
+    "intro_analysis": {
+      "name": "intro_analysis",
+      "type": "string",
+      "is_array": false
+    },
+    "intro_analysis_combined": {
+      "name": "intro_analysis_combined",
       "type": "string",
       "is_array": false
     }
   },
-  "prompts": [
-    {
-      "name": "best_practice",
-      "path": "youtube/title_creator/best_practice.md"
-    }
-  ]
+  "prompts": {
+  }
 }

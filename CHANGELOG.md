@@ -1,3 +1,10 @@
+## [0.0.7](https://github.com/appydave/ad-agent_architecture/compare/v0.0.6...v0.0.7) (2024-06-29)
+
+
+### Bug Fixes
+
+* add basic support for database persistence to DSL ([632c815](https://github.com/appydave/ad-agent_architecture/commit/632c815133b2cd31ab95dccb3c0b8564e25aa605))
+
 ## [0.0.6](https://github.com/appydave/ad-agent_architecture/compare/v0.0.5...v0.0.6) (2024-06-28)
 
 

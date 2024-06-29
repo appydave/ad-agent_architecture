@@ -1,3 +1,10 @@
+## [0.0.10](https://github.com/appydave/ad-agent_architecture/compare/v0.0.9...v0.0.10) (2024-06-29)
+
+
+### Bug Fixes
+
+* refactor DSL to use component DSLs ([597050a](https://github.com/appydave/ad-agent_architecture/commit/597050ad727f1aaf8eb3e6589cf1c618f41499e7))
+
 ## [0.0.9](https://github.com/appydave/ad-agent_architecture/compare/v0.0.8...v0.0.9) (2024-06-29)
 
 

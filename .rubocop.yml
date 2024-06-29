@@ -43,8 +43,7 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Max: 25
   Exclude:
-    - "lib/ad/agent_architecture/dsl/*"
-    - "lib/ad/agent_architecture/database/*"
+    - "lib/ad/agent_architecture/**/*"
 
 Layout/LineLength:
   Max: 200
@@ -92,9 +91,7 @@ Style/AccessorGrouping:
   Enabled: false
 Metrics/AbcSize:
   Exclude:
-    - "lib/ad/agent_architecture/dsl/*"
-    - "lib/ad/agent_architecture/database/*"
-    - "lib/ad/agent_architecture/report/*"
+    - "lib/ad/agent_architecture/**/*"
 Metrics/NoExpectationExample:
   Exclude:
     - "spec/ad/agent_architecture/dsl/*"

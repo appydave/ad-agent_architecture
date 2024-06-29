@@ -1,3 +1,11 @@
+## [0.0.9](https://github.com/appydave/ad-agent_architecture/compare/v0.0.8...v0.0.9) (2024-06-29)
+
+
+### Bug Fixes
+
+* add save, save_json, save_yaml and better report support ([4350628](https://github.com/appydave/ad-agent_architecture/commit/4350628f95b06a5df3bac3432f52aa560c7699f5))
+* add save, save_json, save_yaml and better report support ([9a7238a](https://github.com/appydave/ad-agent_architecture/commit/9a7238a0102e40a6e603a7a82757ff7c684ab374))
+
 ## [0.0.8](https://github.com/appydave/ad-agent_architecture/compare/v0.0.7...v0.0.8) (2024-06-29)
 
 

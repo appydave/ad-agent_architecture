@@ -11,7 +11,7 @@ module Ad
 
         def print
           # tp query, :workflow_name, :workflow_description, :section_name, :section_description, :section_order, :step_name, :step_order, :step_prompt, :inputs, :outputs
-          tp query, :workflow_name, :workflow_description, :section_name, :step_name, :step_prompt, :inputs, :outputs
+          tp query, :workflow_name, :section_name, :step_name, :step_prompt, :inputs, :outputs
         end
 
         def query

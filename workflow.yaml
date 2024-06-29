@@ -1,0 +1,65 @@
+---
+:name: YouTube Transcript to Medium Article
+:sections:
+- :name: Analysis
+  :order: 1
+  :steps:
+  - :name: Generate Outline
+    :order: 1
+    :input_attributes:
+    - :transcript
+    :output_attributes:
+    - :outline
+    :prompt: Analyze [transcript] and generate a preliminary outline for a blog post.
+  - :name: Write First Draft
+    :order: 2
+    :input_attributes:
+    - :outline
+    :output_attributes:
+    - :first_draft
+    :prompt: Write a blog post based on [outline].
+  - :name: Generate Intros
+    :order: 3
+    :input_attributes:
+    - :first_draft
+    :output_attributes:
+    - :intro_variations
+    :prompt: Create 5 introduction variations for [first_draft].
+  - :name: SEO Analysis
+    :order: 4
+    :input_attributes:
+    - :first_draft
+    :output_attributes:
+    - :seo_analysis
+    :prompt: Analyze the blog post for SEO.
+- :name: Editing
+  :order: 2
+  :steps:
+  - :name: Edit Draft
+    :order: 1
+    :input_attributes:
+    - :first_draft
+    :output_attributes:
+    - :first_draft
+    :prompt: Edit [first_draft] for grammar, style, and clarity.
+:attributes:
+  :transcript:
+    :name: :transcript
+    :type: :string
+    :is_array: false
+  :outline:
+    :name: :outline
+    :type: :string
+    :is_array: false
+  :first_draft:
+    :name: :first_draft
+    :type: :string
+    :is_array: false
+  :intro_variations:
+    :name: :intro_variations
+    :type: :array
+    :is_array: false
+  :seo_analysis:
+    :name: :seo_analysis
+    :type: :string
+    :is_array: false

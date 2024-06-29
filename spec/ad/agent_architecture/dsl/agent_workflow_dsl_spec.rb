@@ -2,9 +2,7 @@
 
 RSpec.describe Ad::AgentArchitecture::Dsl::AgentWorkflowDsl do
   it 'test usage' do
-    puts 'xxxx'
-
-    described_class.create(name: 'YouTube Transcript to Medium Article') do
+    dsl = described_class.create(name: 'YouTube Transcript to Medium Article') do
       attributes do
         attribute :transcript, type: :string
         attribute :outline, type: :string
@@ -38,14 +36,27 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentWorkflowDsl do
           output :seo_analysis, file: '04-2-seo-analysis-OUTPUT.md'
         end
       end
+
+      section(name: 'Editing') do
+        step(name: 'Edit Draft') do
+          input :first_draft, file: '02-2-first-draft-OUTPUT.md'
+          prompt 'Edit [first_draft] for grammar, style, and clarity.', file: '05-1-edited-draft.md'
+          output :first_draft, file: '05-2-edited-draft-OUTPUT.md'
+        end
+      end
     end
 
-    # Assuming you have a workflow object available
+    dsl
+      .save
+      .save_json(file_name: 'workflow.json')
+      .save_yaml file_name: 'workflow.yaml'
+
+
+    # # Assuming you have a workflow object available
     workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Transcript to Medium Article')
 
-    # Print the workflow details using k_log
-    report = Ad::AgentArchitecture::Report::WorkflowDetailReport.new
-    report.print(workflow)
+    # report = Ad::AgentArchitecture::Report::WorkflowDetailReport.new
+    # report.print(workflow)
 
     Ad::AgentArchitecture::Report::WorkflowListReport.new.print
   end

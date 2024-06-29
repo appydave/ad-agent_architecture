@@ -11,6 +11,7 @@ DB = Sequel.sqlite
 Ad::AgentArchitecture::Database::CreateSchema.new(DB).execute
 
 require 'ad/agent_architecture/db/models'
+require 'ad/agent_architecture/dsl/agent_workflow_dsl'
 
 module Ad
   module AgentArchitecture

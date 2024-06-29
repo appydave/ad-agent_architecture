@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'sequel'
-
 module Ad
   module AgentArchitecture
     module Database
       # Workflow model represents a workflow entity in the database.
       class Workflow < Sequel::Model
+        set_primary_key :id
+
         one_to_many :sections, class: 'Ad::AgentArchitecture::Database::Section'
         one_to_many :attributes, class: 'Ad::AgentArchitecture::Database::Attribute'
         one_to_many :workflow_runs, class: 'Ad::AgentArchitecture::Database::WorkflowRun'

@@ -42,6 +42,8 @@ Metrics/BlockLength:
 
 Metrics/MethodLength:
   Max: 25
+  Exclude:
+    - "lib/ad/agent_architecture/dsl/*"
 
 Layout/LineLength:
   Max: 200
@@ -87,6 +89,12 @@ Lint/AmbiguousBlockAssociation:
 
 Style/AccessorGrouping:
   Enabled: false
+Metrics/AbcSize:
+  Exclude:
+    - "lib/ad/agent_architecture/dsl/*"
+Metrics/NoExpectationExample:
+  Exclude:
+    - "spec/ad/agent_architecture/dsl/*"
 
 Layout/SpaceBeforeComma:
   Enabled: false
@@ -103,5 +111,9 @@ RSpec/SpecFilePathSuffix:
   Enabled: true
 
 RSpec/NamedSubject:
+  Exclude:
+    - "**/spec/**/*"
+
+RSpec/ExampleLength:
   Exclude:
     - "**/spec/**/*"

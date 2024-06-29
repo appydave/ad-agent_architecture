@@ -1,3 +1,10 @@
+## [0.0.11](https://github.com/appydave/ad-agent_architecture/compare/v0.0.10...v0.0.11) (2024-06-29)
+
+
+### Bug Fixes
+
+* improve reports ([62aac63](https://github.com/appydave/ad-agent_architecture/commit/62aac63af8b48b30514f21b940005e899538307f))
+
 ## [0.0.10](https://github.com/appydave/ad-agent_architecture/compare/v0.0.9...v0.0.10) (2024-06-29)
 
 

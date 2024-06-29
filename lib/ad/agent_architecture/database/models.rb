@@ -10,6 +10,7 @@ module Ad
         one_to_many :sections, class: 'Ad::AgentArchitecture::Database::Section'
         one_to_many :attributes, class: 'Ad::AgentArchitecture::Database::Attribute'
         one_to_many :workflow_runs, class: 'Ad::AgentArchitecture::Database::WorkflowRun'
+        one_to_many :prompts, class: 'Ad::AgentArchitecture::Database::Prompt'
       end
 
       # Section model represents a section entity in the database.
@@ -44,6 +45,10 @@ module Ad
       class OutputAttribute < Sequel::Model
         many_to_one :step, class: 'Ad::AgentArchitecture::Database::Step'
         many_to_one :attribute, class: 'Ad::AgentArchitecture::Database::Attribute'
+      end
+
+      class Prompt < Sequel::Model
+        many_to_one :workflow, class: 'Ad::AgentArchitecture::Database::Workflow'
       end
 
       # WorkflowRun model represents a workflow run entity in the database.

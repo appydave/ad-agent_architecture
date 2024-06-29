@@ -3,6 +3,10 @@
 RSpec.describe Ad::AgentArchitecture::Dsl::AgentWorkflowDsl do
   it 'test usage' do
     dsl = described_class.create(name: 'YouTube Transcript to Medium Article') do
+      prompts do
+        prompt :best_practice, path: 'youtube/title_creator/best_practice.md'
+      end
+
       attributes do
         attribute :transcript, type: :string
         attribute :outline, type: :string
@@ -48,8 +52,8 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentWorkflowDsl do
 
     dsl
       .save
-      .save_json(file_name: 'workflow.json')
-      .save_yaml file_name: 'workflow.yaml'
+      .save_json('workflow.json')
+      .save_yaml('workflow.yaml')
 
     # # Assuming you have a workflow object available
     Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Transcript to Medium Article')

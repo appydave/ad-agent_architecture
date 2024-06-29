@@ -69,6 +69,16 @@ module Ad
             foreign_key :attribute_id, :attributes
           end
 
+          db.create_table :prompts do
+            primary_key :id
+            String :name, null: false
+            String :path, null: true
+            String :content, null: true
+            foreign_key :workflow_id, :workflows
+          end
+
+          # Workflow runs workflows that are executed
+
           db.create_table :workflow_runs do
             primary_key :id
             foreign_key :workflow_id, :workflows

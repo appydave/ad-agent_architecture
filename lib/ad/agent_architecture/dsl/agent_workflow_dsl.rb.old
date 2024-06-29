@@ -12,7 +12,7 @@ module Ad
         end
 
         def initialize(name)
-          @workflow = { name: name, sections: [], attributes: {} }
+          @workflow = { name: name, sections: [], attributes: {}, prompts: [] }
           @current_section_order = 1
         end
 
@@ -22,6 +22,14 @@ module Ad
 
         def attribute(name, type:, is_array: false)
           @workflow[:attributes][name] = { name: name, type: type, is_array: is_array }
+        end
+
+        def prompts(&block)
+          instance_eval(&block) if block_given?
+        end
+
+        def define_prompt(name, path: nil, content: nil)
+          @workflow[:prompts] << { name: name, path: path, content: content }
         end
 
         def section(name:, &block)

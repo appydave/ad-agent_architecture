@@ -24,6 +24,13 @@ module Ad
 
               attribute_map = attribute_records.to_h { |ar| [ar.name.to_sym, ar] }
 
+              # Save prompts
+              @workflow_hash[:prompts].each_value do |prompt|
+                Ad::AgentArchitecture::Database::Prompt.create(
+                  name: prompt[:name], path: prompt[:path], content: prompt[:content], workflow: workflow_record
+                )
+              end
+
               # Save sections and steps
               @workflow_hash[:sections].each do |section|
                 section_record = Ad::AgentArchitecture::Database::Section.create(

@@ -3,45 +3,51 @@
 require 'spec_helper'
 
 RSpec.describe 'Ad::AgentArchitecture::Db' do
+  let(:db) { DB }
+
+  before do
+    reset_database(db)
+  end
+
   describe 'Database Schema' do
     it 'has a workflows table' do
-      expect(DB.table_exists?(:workflows)).to be true
+      expect(db.table_exists?(:workflows)).to be true
     end
 
     it 'has a sections table' do
-      expect(DB.table_exists?(:sections)).to be true
+      expect(db.table_exists?(:sections)).to be true
     end
 
     it 'has a steps table' do
-      expect(DB.table_exists?(:steps)).to be true
+      expect(db.table_exists?(:steps)).to be true
     end
 
     it 'has an attributes table' do
-      expect(DB.table_exists?(:attributes)).to be true
+      expect(db.table_exists?(:attributes)).to be true
     end
 
     it 'has an input_attributes table' do
-      expect(DB.table_exists?(:input_attributes)).to be true
+      expect(db.table_exists?(:input_attributes)).to be true
     end
 
     it 'has an output_attributes table' do
-      expect(DB.table_exists?(:output_attributes)).to be true
+      expect(db.table_exists?(:output_attributes)).to be true
     end
 
     it 'has a workflow_runs table' do
-      expect(DB.table_exists?(:workflow_runs)).to be true
+      expect(db.table_exists?(:workflow_runs)).to be true
     end
 
     it 'has a section_runs table' do
-      expect(DB.table_exists?(:section_runs)).to be true
+      expect(db.table_exists?(:section_runs)).to be true
     end
 
     it 'has a step_runs table' do
-      expect(DB.table_exists?(:step_runs)).to be true
+      expect(db.table_exists?(:step_runs)).to be true
     end
 
     it 'has an attribute_values table' do
-      expect(DB.table_exists?(:attribute_values)).to be true
+      expect(db.table_exists?(:attribute_values)).to be true
     end
   end
 

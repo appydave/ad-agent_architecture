@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-AgentWorkflow.create(name: 'YouTube Transcript to Medium Article') do
+AgentDsl.create(name: 'YouTube Transcript to Medium Article') do
   attributes do
     attribute :transcript, type: :string
     attribute :outline, type: :string

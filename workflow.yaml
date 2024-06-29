@@ -1,65 +1,56 @@
 ---
-:name: YouTube Transcript to Medium Article
+:name: YouTube Title Creator
 :sections:
-- :name: Analysis
+- :name: Research
   :order: 1
   :steps:
-  - :name: Generate Outline
+  - :name: Starting Context
     :order: 1
-    :input_attributes:
-    - :transcript
-    :output_attributes:
-    - :outline
-    :prompt: Analyze [transcript] and generate a preliminary outline for a blog post.
-  - :name: Write First Draft
+    :input_attributes: []
+    :output_attributes: []
+    :prompt: :best_practice
+  - :name: Basic titles
     :order: 2
     :input_attributes:
-    - :outline
+    - :basic_title
+    - :basic_keyword
+    - :basic_transcript
     :output_attributes:
-    - :first_draft
-    :prompt: Write a blog post based on [outline].
-  - :name: Generate Intros
+    - :potential_titles
+    :prompt: |
+      Keyword: [start_keyword]
+      Title: [start_title]
+
+      Transcript:
+
+      [start_transcript]
+  - :name: Working Title
     :order: 3
     :input_attributes:
-    - :first_draft
+    - :potential_titles
     :output_attributes:
-    - :intro_variations
-    :prompt: Create 5 introduction variations for [first_draft].
-  - :name: SEO Analysis
-    :order: 4
-    :input_attributes:
-    - :first_draft
-    :output_attributes:
-    - :seo_analysis
-    :prompt: Analyze the blog post for SEO.
-- :name: Editing
-  :order: 2
-  :steps:
-  - :name: Edit Draft
-    :order: 1
-    :input_attributes:
-    - :first_draft
-    :output_attributes:
-    - :first_draft
-    :prompt: Edit [first_draft] for grammar, style, and clarity.
+    - :working_title
 :attributes:
-  :transcript:
-    :name: :transcript
+  :start_title:
+    :name: :start_title
     :type: :string
     :is_array: false
-  :outline:
-    :name: :outline
+  :start_keyword:
+    :name: :start_keyword
     :type: :string
     :is_array: false
-  :first_draft:
-    :name: :first_draft
+  :start_transcript:
+    :name: :start_transcript
     :type: :string
     :is_array: false
-  :intro_variations:
-    :name: :intro_variations
+  :potential_titles:
+    :name: :potential_titles
     :type: :array
     :is_array: false
-  :seo_analysis:
-    :name: :seo_analysis
+  :working_title:
+    :name: :working_title
     :type: :string
     :is_array: false
+:prompts:
+- :name: :best_practice
+  :path: youtube/title_creator/best_practice.md

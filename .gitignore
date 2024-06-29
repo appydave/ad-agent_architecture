@@ -28,6 +28,9 @@
 *.a
 mkmf.log
 
+# Prompts are stored in remote folder and accessed via symlink
+prompts
+
 # Ruby Version
 .ruby-version
 

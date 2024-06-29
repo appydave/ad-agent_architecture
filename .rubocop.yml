@@ -14,7 +14,7 @@ AllCops:
   Exclude:
     - ".builders/**/*"
     - "spec/samples/**/*"
-    - "lib/ad/agent_architecture/db/*"
+    - "lib/ad/agent_architecture/database/*"
 
 Metrics/BlockLength:
   Exclude:
@@ -44,6 +44,7 @@ Metrics/MethodLength:
   Max: 25
   Exclude:
     - "lib/ad/agent_architecture/dsl/*"
+    - "lib/ad/agent_architecture/database/*"
 
 Layout/LineLength:
   Max: 200
@@ -92,6 +93,8 @@ Style/AccessorGrouping:
 Metrics/AbcSize:
   Exclude:
     - "lib/ad/agent_architecture/dsl/*"
+    - "lib/ad/agent_architecture/database/*"
+    - "lib/ad/agent_architecture/report/*"
 Metrics/NoExpectationExample:
   Exclude:
     - "spec/ad/agent_architecture/dsl/*"

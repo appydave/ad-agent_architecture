@@ -39,5 +39,14 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentWorkflowDsl do
         end
       end
     end
+
+    # Assuming you have a workflow object available
+    workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Transcript to Medium Article')
+
+    # Print the workflow details using k_log
+    report = Ad::AgentArchitecture::Report::WorkflowDetailReport.new
+    report.print(workflow)
+
+    Ad::AgentArchitecture::Report::WorkflowListReport.new.print
   end
 end

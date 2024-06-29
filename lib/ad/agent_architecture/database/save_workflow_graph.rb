@@ -3,6 +3,7 @@
 module Ad
   module AgentArchitecture
     module Database
+      # Save workflow graph to database
       class SaveWorkflowGraph
         def initialize(workflow_hash)
           @workflow_hash = workflow_hash

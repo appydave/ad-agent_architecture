@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
-  let(:instance) { described_class.new(name, order, steps) }
-
-  let(:section) { { steps: [] } }
+  let(:instance) { described_class.new(workflow, section, name, order) }
+  let(:section) { workflow[:sections].first }
   let(:steps) { section[:steps] }
   let(:name) { 'Generate Outline' }
   let(:order) { 1 }
+  let(:dsl) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
+  let(:workflow) { dsl.workflow }
+
+  before do
+    dsl.section('Section Name')
+  end
 
   describe '#step' do
     context 'when step is instantiated' do

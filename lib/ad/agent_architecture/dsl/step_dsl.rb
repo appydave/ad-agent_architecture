@@ -5,10 +5,16 @@ module Ad
     module Dsl
       # This class is responsible for defining the steps of a section
       class StepDsl
-        def initialize(name, order, steps)
-          @step = { name: name, order: order, input_attributes: [], output_attributes: [], prompt: '' }
-          @steps = steps
-          @steps << @step
+        def initialize(_workflow, section, name, order)
+          @step = {
+            name: name,
+            order: order,
+            prompt: '',
+            input_attributes: [],
+            output_attributes: []
+          }
+
+          section[:steps] << @step
         end
 
         def input(attr_name, **_opts)

@@ -29,6 +29,8 @@ dsl = Agent.create(name: 'YouTube Title Creator') do
         [start_transcript]
       TEXT
       output :potential_titles
+      output :transcript
+      output :start_keyword
     end
 
     step(name: 'Working Title') do
@@ -40,13 +42,29 @@ dsl = Agent.create(name: 'YouTube Title Creator') do
       output :working_title
     end
   end
+
+  # In the analyis section we will varify the quality of the title from various perspectives
+  section(name: 'Analysis') do
+    step(name: 'Title Analysis Xmen') do
+      input :working_title
+      prompt 'Analyze the title [working_title] for quality and effectiveness.' 
+      output :working_title
+    end
+
+    step(name: 'Title Quality') do
+      input :working_title
+      prompt 'Rate the quality of the title [working_title].'
+      output :working_title
+    end
+  end
 end
+
+PROMT_XMEN = "DAVID"
 
 dsl
   .save
-  .save_json('workflow.json')
-  .save_yaml('workflow.yaml')
-
+  .save_json('/Users/davidcruwys/dev/sites/working-with-sean/gpt-agents/src/content/gpt-workflows/youtube-title-creator.json')
+  
 workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Title Creator')
 
 Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)

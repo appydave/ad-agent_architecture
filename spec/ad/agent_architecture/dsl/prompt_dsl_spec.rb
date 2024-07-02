@@ -1,23 +1,33 @@
 # frozen_string_literal: true
 
+# I need to use a temp file to store the prompt and then read the content of the file
+
 RSpec.describe Ad::AgentArchitecture::Dsl::PromptDsl do
-  subject { described_class.new(prompts) }
+  let(:instance) { described_class.new(workflow) }
+  let(:dsl) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
+  let(:workflow) { dsl.workflow }
 
-  let(:workflow) { { prompts: {} } }
-  let(:prompts) { workflow[:prompts] }
+  context 'when prompts are added to workflow' do
+    subject { workflow[:prompts] }
 
-  describe '#prompt' do
-    it 'adds a prompt to the workflow using path' do
-      subject.prompt :best_practice, path: 'youtube/title_creator/best_practice.md'
-      expect(workflow[:prompts]).to include(:best_practice)
-      expect(workflow[:prompts][:best_practice]).to include(name: :best_practice, path: 'youtube/title_creator/best_practice.md')
+    before do
+      instance.prompt(:best_practice, content: 'Create 5 titles')
     end
 
-    # spec/ad/agent_architecture/dsl/prompt_dsl_spec.rb:16:5: C: RSpec/MultipleExpectations: Example has too many expectations [2/1].
-    it 'adds a prompt to the workflow using content' do
-      subject.prompt :best_practice, content: 'Use the following best practices to create a title for your YouTube video.'
-      expect(workflow[:prompts]).to include(:best_practice)
-      expect(workflow[:prompts][:best_practice]).to include(name: :best_practice, content: 'Use the following best practices to create a title for your YouTube video.')
+    it { is_expected.to include(best_practice: { name: :best_practice, content: 'Create 5 titles' }) }
+  end
+
+  context 'when prompt file is read' do
+    let(:temp_dir) { Dir.mktmpdir }
+    let(:prompt_file_path) { File.join(temp_dir, 'my_prompt.txt') }
+
+    before do
+      File.write(prompt_file_path, 'Create 5 titles')
+      dsl.settings.prompt_path(temp_dir)
+    end
+
+    it 'reads the content of the file' do
+      expect(instance.prompt_file('my_prompt.txt').strip).to eq('Create 5 titles')
     end
   end
 end

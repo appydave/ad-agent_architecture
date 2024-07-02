@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 dsl = Agent.create(name: 'YouTube Transcript to Medium Article') do
   attributes do
     attribute :transcript, type: :string
@@ -10,6 +8,11 @@ dsl = Agent.create(name: 'YouTube Transcript to Medium Article') do
     attribute :second_draft, type: :string
     attribute :intro_analysis, type: :string
     attribute :intro_analysis_combined, type: :string
+    attribute :xmen, type: :string
+  end
+
+  prompts do
+    prompt :best_practice, path: 'youtube/transcript_to_medium/best_practice.md'
   end
 
   section(name: 'Analysis') do
@@ -17,6 +20,7 @@ dsl = Agent.create(name: 'YouTube Transcript to Medium Article') do
       input :transcript                                                                         , file: '00-trascript.txt'
       prompt 'Analyze [transcript] and generate a preliminary outline for a blog post.'         , file: '01-1-transcript-outline.md'
       output :outline                                                                           , file: '01-2-transcript-outline-OUTPUT.md'
+      output :xmen                                                                              , file: '01-2-transcript-outline-OUTPUT.md'
     end
 
     step(name: 'Write First Draft') do
@@ -50,12 +54,23 @@ dsl = Agent.create(name: 'YouTube Transcript to Medium Article') do
       output :intro_analysis_combined , file: '06-2-intro-analysis-combined.md'
     end
   end
+  
+  section(name: 'Drafting') do
+    step(name: 'Write Second Draft') do
+      input :second_draft                                                                       , file: '04-2-intro-update-OUTPUT.md'
+      prompt 'Write a second draft of the article based on [second_draft].'                     , file: '07-1-second-draft.md'
+      output :second_draft                                                                      , file: '07-2-second-draft-OUTPUT.md'
+    end
+
+    step(name: 'Update Draft with Intro Analysis') do
+      prompt 'Update [second_draft] with the intro analysis [intro_analysis_combined].'         , file: '08-1-intro-analysis-update.md'
+    end
+  end
 end
 
 dsl
   .save
-  .save_json('workflow.json')
-  .save_yaml('workflow.yaml')
+  .save_json('/Users/davidcruwys/dev/sites/working-with-sean/gpt-agents/src/content/gpt-workflows/youtube-transcription-medium.json')
 
 workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Transcript to Medium Article')
 

@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.describe Ad::AgentArchitecture::Dsl::SectionDsl do
-  let(:instance) { described_class.new(name, order, sections) }
+  let(:instance) { described_class.new(workflow, name, order) }
 
-  let(:workflow) { { sections: [] } }
+  let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name').workflow }
+
   let(:sections) { workflow[:sections] }
   let(:name) { 'Analysis' }
   let(:order) { 1 }

@@ -8,7 +8,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::WorkflowDsl do
   context 'when workflow is instantiated' do
     subject { instance.workflow }
 
-    it { is_expected.to include(name: 'Blog Post Workflow', sections: [], attributes: {}, prompts: {}) }
+    it { is_expected.to include(name: 'Blog Post Workflow', sections: [], attributes: {}, prompts: {}, settings: {}) }
   end
 
   context 'when attributes are added to workflow' do
@@ -23,8 +23,11 @@ RSpec.describe Ad::AgentArchitecture::Dsl::WorkflowDsl do
     end
 
     it {
-      expect(subject).to include(transcript: { name: :transcript, type: :string, is_array: false }, outline: { name: :outline, type: :string, is_array: false },
-                                 keywords: { name: :keywords, type: :string, is_array: true })
+      expect(subject).to include(
+        transcript: { name: :transcript, type: :string, is_array: false },
+        outline: { name: :outline, type: :string, is_array: false },
+        keywords: { name: :keywords, type: :string, is_array: true }
+      )
     }
   end
 
@@ -37,6 +40,18 @@ RSpec.describe Ad::AgentArchitecture::Dsl::WorkflowDsl do
       end
     end
 
-    it { is_expected.to include(transcript: { content: 'Enter the transcript of the blog post.', name: :transcript, path: nil }) }
+    it { is_expected.to include(transcript: { content: 'Enter the transcript of the blog post.', name: :transcript }) }
+  end
+
+  context 'when settings are added to workflow' do
+    subject { instance.workflow[:settings] }
+
+    before do
+      instance.settings do
+        path_to_prompts '/path/to/prompts'
+      end
+    end
+
+    it { is_expected.to include(path_to_prompts: '/path/to/prompts') }
   end
 end

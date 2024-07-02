@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Visualization</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        function toggleSteps(sectionId) {
+            const steps = document.getElementById(sectionId);
+            steps.classList.toggle('hidden');
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.main-content > div');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body class="h-full bg-white">
+
+<div class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-gray-900/80" aria-hidden="true"></div>
+    <div class="fixed inset-0 flex">
+        <div class="relative mr-16 flex w-full max-w-xs flex-1">
+            <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
+                <button type="button" class="-m-2.5 p-2.5">
+                    <span class="sr-only">Close sidebar</span>
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2">
+                <div class="flex h-16 shrink-0 items-center">
+                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+                </div>
+                <nav class="flex flex-1 flex-col">
+                    <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                        <li>
+                            <ul role="list" class="-mx-2 space-y-1">
+                                <li>
+                                    <a href="#" onclick="showSection('section-1');" class="group flex gap-x-3 rounded-md bg-gray-50 p-2 text-sm font-semibold leading-6 text-indigo-600">
+                                        Sections
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="showSection('prompts-attributes');" class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600">
+                                        Prompts and Attributes
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+    <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
+        <div class="flex h-16 shrink-0 items-center">
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+        </div>
+        <nav class="flex flex-1 flex-col">
+            <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                <li>
+                    <ul role="list" class="-mx-2 space-y-1">
+                        <li>
+                            <a href="#" onclick="showSection('section-1');" class="group flex gap-x-3 rounded-md bg-gray-50 p-2 text-sm font-semibold leading-6 text-indigo-600">
+                                Sections
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="showSection('prompts-attributes');" class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600">
+                                Prompts and Attributes
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+    <button type="button" class="-m-2.5 p-2.5 text-gray-700 lg:hidden">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+    </button>
+    <div class="flex-1 text-sm font-semibold leading-6 text-gray-900">Dashboard</div>
+    <a href="#">
+        <span class="sr-only">Your profile</span>
+        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+    </a>
+</div>
+
+<main class="lg:pl-72">
+    <div class="xl:pr-96">
+        <div class="main-content px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
+            <div id="section-1" class="hidden">
+                <h1 class="text-2xl font-bold mb-4">Sections</h1>
+                <div class="section bg-white shadow rounded mb-4">
+                    <div class="section-header bg-gray-200 px-4 py-2 cursor-pointer font-bold flex justify-between items-center" onclick="toggleSteps('steps-1')">
+                        Research
+                        <button class="bg-blue-500 text-white px-2 py-1 rounded">Toggle Steps</button>
+                    </div>
+                    <div class="steps p-4 hidden" id="steps-1">
+                        <div class="step mb-4">
+                            <h3 class="font-semibold mb-1">Step 1: Come up with a simple working title</h3>
+                            <p class="mb-1"><span class="font-bold">Input:</span> Title</p>
+                            <p class="mb-1"><span class="font-bold">Output:</span> Working Title</p>
+                            <p><span class="font-bold">Prompt:</span> Come up with a simple working title for the video based on [title].</p>
+                        </div>
+                        <div class="step mb-4">
+                            <h3 class="font-semibold mb-1">Step 2: Perform basic keyword research</h3>
+                            <p class="mb-1"><span class="font-bold">Input:</span> Working Title</p>
+                            <p class="mb-1"><span class="font-bold">Output:</span> Keywords</p>
+                            <p><span class="font-bold">Prompt:</span> Perform basic keyword research to identify relevant keywords for [working_title]. Return a list of keywords.</p>
+                        </div>
+                        <div class="step mb-4">
+                            <h3 class="font-semibold mb-1">Step 3: Conduct basic topic research</h3>
+                            <p class="mb-1"><span class="font-bold">Input:</span> Working Title, Keywords</p>
+                            <p class="mb-1"><span class="font-bold">Output:</span> Basic Research</p>
+                            <p><span class="font-bold">Prompt:</span> Conduct basic topic research to gather information on the subject of [working_title]. Here are the keywords: [keywords].</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section bg-white shadow rounded mb-4">
+                    <div class="section-header bg-gray-200 px-4 py-2 cursor-pointer font-bold flex justify-between items-center" onclick="toggleSteps('steps-2')">
+                        Title Creation
+                        <button class="bg-blue-500 text-white px-2 py-1 rounded">Toggle Steps</button>
+                    </div>
+                    <div class="steps p-4 hidden" id="steps-2">
+                        <div class="step mb-4">
+                            <h3 class="font-semibold mb-1">Step 1: Create a list of potential titles</h3>
+                            <p class="mb-1"><span class="font-bold">Input:</span> Working Title, Basic Research</p>
+                            <p class="mb-1"><span class="font-bold">Output:</span> Titles</p>
+                            <p><span class="font-bold">Prompt:</span> Create a list of potential titles based on the working title, keywords, and basic research.</p>
+                        </div>
+                        <div class="step mb-4">
+                            <h3 class="font-semibold mb-1">Step 2: Finalize the title</h3>
+                            <p class="mb-1"><span class="font-bold">Input:</span> Titles</p>
+                            <p class="mb-1"><span class="font-bold">Output:</span> Final Title</p>
+                            <p><span class="font-bold">Prompt:</span> Finalize the best title from the list of potential titles.</p>
+                        </div>
+                        <div class="step mb-4">
+                            <h3 class="font-semibold mb-1">Step 3: Validate the title</h3>
+                            <p class="mb-1"><span class="font-bold">Input:</span> Final Title</p>
+                            <p class="mb-1"><span class="font-bold">Output:</span> Validated Title</p>
+                            <p><span class="font-bold">Prompt:</span> Validate the chosen title for SEO and audience engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="prompts-attributes" class="hidden">
+                <h1 class="text-2xl font-bold mb-4">Prompts and Attributes</h1>
+                <div class="bg-white shadow rounded mb-4 p-4">
+                    <h2 class="font-semibold mb-2">Prompts</h2>
+                    <ul>
+                        <li>Come up with a simple working title for the video based on [title].</li>
+                        <li>Perform basic keyword research to identify relevant keywords for [working_title]. Return a list of keywords.</li>
+                        <li>Conduct basic topic research to gather information on the subject of [working_title]. Here are the keywords: [keywords].</li>
+                        <li>Create a list of potential titles based on the working title, keywords, and basic research.</li>
+                        <li>Finalize the best title from the list of potential titles.</li>
+                        <li>Validate the chosen title for SEO and audience engagement.</li>
+                    </ul>
+                </div>
+                <div class="bg-white shadow rounded p-4">
+                    <h2 class="font-semibold mb-2">Attributes</h2>
+                    <ul>
+                        <li>Title (string)</li>
+                        <li>Working Title (string)</li>
+                        <li>Keywords (array)</li>
+                        <li>Basic Research (string)</li>
+                        <li>Titles (array)</li>
+                        <li>Final Title (string)</li>
+                        <li>Validated Title (string)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<aside class="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
+    <div class="bg-white shadow rounded p-4">
+        <h2 class="text-xl font-bold mb-4">Attributes</h2>
+        <div>
+            <h3 class="font-semibold mb-2">Inputs</h3>
+            <ul id="input-attributes">
+                <!-- Input attributes for the selected step will be dynamically injected here -->
+            </ul>
+        </div>
+        <div class="mt-4">
+            <h3 class="font-semibold mb-2">Outputs</h3>
+            <ul id="output-attributes">
+                <!-- Output attributes for the selected step will be dynamically injected here -->
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<script>
+    function updateAttributes(inputAttrs, outputAttrs) {
+        const inputList = document.getElementById('input-attributes');
+        const outputList = document.getElementById('output-attributes');
+        
+        inputList.innerHTML = '';
+        outputList.innerHTML = '';
+
+        inputAttrs.forEach(attr => {
+            const li = document.createElement('li');
+            li.textContent = attr;
+            inputList.appendChild(li);
+        });
+
+        outputAttrs.forEach(attr => {
+            const li = document.createElement('li');
+            li.textContent = attr;
+            outputList.appendChild(li);
+        });
+    }
+</script>
+
+</body>
+</html>

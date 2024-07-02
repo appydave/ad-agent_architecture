@@ -28,9 +28,9 @@ group :green_pass_then_cop, halt_on_fail: true do
     watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
   end
 
-  guard :shell do
-    watch(%r{^spec/usecases/.+\.rbx$}) do |m|
-      `ruby -r ./spec/usecases/dsl_initialize.rb #{m[0]}`
-    end
-  end
+  # guard :shell do
+  #   watch(%r{^spec/usecases/.+\.rbx$}) do |m|
+  #     `ruby -r ./spec/usecases/dsl_initialize.rb #{m[0]}`
+  #   end
+  # end
 end

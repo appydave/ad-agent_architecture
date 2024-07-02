@@ -17,6 +17,10 @@ module Ad
           @workflow = WorkflowDsl.new(name)
         end
 
+        def settings(&block)
+          @workflow.settings(&block)
+        end
+
         def attributes(&block)
           @workflow.attributes(&block)
         end
@@ -25,8 +29,8 @@ module Ad
           @workflow.prompts(&block)
         end
 
-        def section(name:, &block)
-          @workflow.section(name: name, &block)
+        def section(name, &block)
+          @workflow.section(name, &block)
         end
 
         def save

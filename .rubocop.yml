@@ -93,9 +93,6 @@ Style/AccessorGrouping:
 Metrics/AbcSize:
   Exclude:
     - "lib/ad/agent_architecture/**/*"
-Metrics/NoExpectationExample:
-  Exclude:
-    - "spec/ad/agent_architecture/dsl/*"
 
 Layout/SpaceBeforeComma:
   Enabled: false
@@ -112,17 +109,18 @@ RSpec/SpecFilePathSuffix:
   Enabled: true
 
 RSpec/NamedSubject:
-  Exclude:
-    - "**/spec/**/*"
+  Enabled: false
 
 RSpec/ExampleLength:
-  Exclude:
-    - "**/spec/**/*"
+  Enabled: false
 
 RSpec/MultipleExpectations:
   Max: 3
   Exclude:
     - "spec/ad/agent_architecture/dsl/actions/save_database_spec.rb"
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
 
 Metrics/CyclomaticComplexity:
   Exclude:

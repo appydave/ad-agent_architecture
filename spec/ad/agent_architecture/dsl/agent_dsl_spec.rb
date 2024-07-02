@@ -8,7 +8,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentDsl do
   context 'when agent is instantiated' do
     subject { instance.workflow.workflow }
 
-    it { is_expected.to include(name: 'Blog Post Workflow', sections: [], attributes: {}, prompts: {}) }
+    it { is_expected.to include(name: 'Blog Post Workflow', settings: {}, attributes: {}, prompts: {}, sections: []) }
   end
 
   context 'when attributes are added to agent' do
@@ -32,14 +32,14 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentDsl do
       end
     end
 
-    it { is_expected.to include(transcript: { content: 'Enter the transcript of the blog post.', name: :transcript, path: nil }) }
+    it { is_expected.to include(transcript: { content: 'Enter the transcript of the blog post.', name: :transcript }) }
   end
 
   context 'when section is added to agent' do
     subject { instance.workflow.workflow[:sections] }
 
     before do
-      instance.section(name: 'Section 1')
+      instance.section('Section 1')
     end
 
     it { is_expected.to include(name: 'Section 1', order: 1, steps: []) }

@@ -22,7 +22,7 @@ module Ad
               # puts step.input_attributes.first
               # An ERROR here means you have not configured an attribute name
               log.kv 'Input Attributes', step.input_attributes.map { |ia| ia.attribute.name }.join(', ')
-              log.kv 'Output Attributes', step.output_attributes.map { |oa| oa.attribute.name }.join(', ')
+              log.kv 'Output Attributes', step.output_attributes.map { |oa| oa.attribute&.name }.join(', ')
             end
           end
         end

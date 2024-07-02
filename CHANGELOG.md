@@ -1,3 +1,10 @@
+## [0.0.12](https://github.com/appydave/ad-agent_architecture/compare/v0.0.11...v0.0.12) (2024-07-02)
+
+
+### Bug Fixes
+
+* refactor DSL and Child DSL components, add support for prompt loading ([f260260](https://github.com/appydave/ad-agent_architecture/commit/f260260ea416d0c9d3a39dc1dd7fd0b66d145a80))
+
 ## [0.0.11](https://github.com/appydave/ad-agent_architecture/compare/v0.0.10...v0.0.11) (2024-06-29)
 
 

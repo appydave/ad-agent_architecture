@@ -13,7 +13,9 @@ module Ad
           @current_step_order = 1
         end
 
-        def step(name:, &block)
+        def step(name, &block)
+          raise ArgumentError, 'Step name must be a string or symbol' unless name.is_a?(String) || name.is_a?(Symbol)
+
           StepDsl.new(workflow, @section, name, @current_step_order).instance_eval(&block)
           @current_step_order += 1
         end

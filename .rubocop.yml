@@ -90,9 +90,14 @@ Lint/AmbiguousBlockAssociation:
 
 Style/AccessorGrouping:
   Enabled: false
+
 Metrics/AbcSize:
   Exclude:
     - "lib/ad/agent_architecture/**/*"
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - "lib/ad/agent_architecture/dsl/actions/save_database.rb"
 
 Layout/SpaceBeforeComma:
   Enabled: false
@@ -125,3 +130,5 @@ RSpec/MultipleMemoizedHelpers:
 Metrics/CyclomaticComplexity:
   Exclude:
     - "lib/ad/agent_architecture/dsl/actions/save_database.rb"
+
+

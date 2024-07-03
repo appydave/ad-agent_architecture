@@ -26,6 +26,10 @@ RSpec.describe Ad::AgentArchitecture::Dsl::PromptDsl do
       dsl.settings.prompt_path(temp_dir)
     end
 
+    after do
+      FileUtils.remove_entry temp_dir
+    end
+
     it 'reads the content of the file' do
       expect(instance.prompt_file('my_prompt.txt').strip).to eq('Create 5 titles')
     end

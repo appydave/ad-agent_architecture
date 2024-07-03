@@ -7,13 +7,15 @@ module Ad
       class AgentDsl
         attr_reader :workflow
 
-        def self.create(name:, &block)
+        def self.create(name, &block)
           new(name).tap do |dsl|
             dsl.instance_eval(&block) if block_given?
           end
         end
 
         def initialize(name)
+          raise ArgumentError, 'Agent name must be a string or symbol' unless name.is_a?(String) || name.is_a?(Symbol)
+
           @workflow = WorkflowDsl.new(name)
         end
 
@@ -30,6 +32,8 @@ module Ad
         end
 
         def section(name, &block)
+          raise ArgumentError, 'Section name must be a string or symbol' unless name.is_a?(String) || name.is_a?(Symbol)
+
           @workflow.section(name, &block)
         end
 

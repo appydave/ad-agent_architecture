@@ -15,7 +15,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
 
   describe '#step' do
     context 'when step is instantiated' do
-      subject { steps.first }
+      subject { instance.step }
 
       before { instance }
 

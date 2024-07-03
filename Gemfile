@@ -10,6 +10,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'guard-shell'
+  gem 'listen'
   gem 'rake'
   gem 'rake-compiler', require: false
   gem 'rspec', '~> 3.0'

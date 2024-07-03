@@ -4,8 +4,12 @@ module Ad
   module AgentArchitecture
     module Dsl
       # This class is responsible for defining the steps of a section
-      class StepDsl
-        def initialize(_workflow, section, name, order)
+      class StepDsl < ChildDsl
+        attr_reader :section
+        attr_reader :step
+
+        def initialize(workflow, section, name, order)
+          super(workflow)
           @step = {
             name: name,
             order: order,
@@ -14,7 +18,8 @@ module Ad
             output_attributes: []
           }
 
-          section[:steps] << @step
+          @section = section
+          @section[:steps] << @step
         end
 
         def input(attr_name, **_opts)

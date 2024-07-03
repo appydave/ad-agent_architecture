@@ -22,7 +22,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::SectionDsl do
       subject { sections.first[:steps] }
 
       before do
-        instance.step(name: 'Generate Outline') do
+        instance.step('Generate Outline') do
           input :transcript
           prompt 'Analyze [transcript] and generate a preliminary outline for a blog post.'
           output :outline

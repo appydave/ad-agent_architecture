@@ -1,4 +1,5 @@
-dsl = Agent.create(name: 'YouTube Script Writer') do
+puts 'yyyyyyy3'
+dsl = Agent.create('YouTube Script Writer') do
   settings do
     # Path is relatevie to this file
     prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/youtube/script_writer')
@@ -25,20 +26,20 @@ dsl = Agent.create(name: 'YouTube Script Writer') do
     attribute :script, type: :string
   end
 
-  section(name: 'Research') do
-    step(name: 'Basic Idea') do
+  section('Research') do
+    step('Basic Idea') do
       input :idea
       prompt :working_idea
       output :ideas
     end
 
-    step(name: 'Basic Factsheet') do
+    step('Basic Factsheet') do
       input :idea
       prompt :basic_factsheete
       output :basic_factsheet
     end
 
-    step(name: 'Video ideas') do
+    step('Video ideas') do
       input :idea
       input :basic_factsheet
       prompt :video_ideas
@@ -46,13 +47,13 @@ dsl = Agent.create(name: 'YouTube Script Writer') do
       output :basic_factsheet
     end
 
-    step(name: 'Select Video Idea') do
+    step('Select Video Idea') do
       input :video_ideas
       # action 'Select the best video idea from the list.'
       output :video_idea
     end
 
-    step(name: 'Expanded Factsheet') do
+    step('Expanded Factsheet') do
       input :idea
       input :basic_factsheet
       input :video_idea
@@ -60,7 +61,7 @@ dsl = Agent.create(name: 'YouTube Script Writer') do
       output :expanded_factsheet
     end
 
-    step(name: 'Video Meta Data') do
+    step('Video Meta Data') do
       input :idea
       input :video_idea
       input :expanded_factsheet
@@ -71,8 +72,8 @@ dsl = Agent.create(name: 'YouTube Script Writer') do
     end
   end
 
-  section(name: 'Develop Script') do
-    step(name: 'Write Script') do
+  section('Develop Script') do
+    step('Write Script') do
       input :video_idea
       input :expanded_factsheet
       # action 'Write a script for the video.'
@@ -90,7 +91,10 @@ workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Script
 Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
 Ad::AgentArchitecture::Report::WorkflowListReport.new.print
 
+# Fix the DB issue
+# Add support for project plan
 # Prompts need to support file read operation
+
 # Fix the auto attribute create
 # Include a report_attribute method or DSL under the tool namespace
 # Visual graph of the workflow
@@ -100,5 +104,4 @@ Ad::AgentArchitecture::Report::WorkflowListReport.new.print
 # Clicking on prompts will show all prompts in the workflow
 # Clicking on dashboard will show visual hierarchy of the workflow
 # Need a runs button
-# Add support for project plan
 # VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20

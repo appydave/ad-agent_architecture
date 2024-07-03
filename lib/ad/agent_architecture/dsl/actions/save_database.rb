@@ -11,12 +11,15 @@ module Ad
           end
 
           def save
+            # puts JSON.pretty_generate(@workflow_hash)
             DB.transaction do
+              # puts "Saving Workflow: #{@workflow_hash[:name]}"
               # Save workflow
               workflow_record = Ad::AgentArchitecture::Database::Workflow.create(name: @workflow_hash[:name])
 
-              # Save attributes
+              # Saving attributes
               attribute_records = @workflow_hash[:attributes].map do |_name, attr|
+                # puts "Saving Attribute: #{attr}"
                 Ad::AgentArchitecture::Database::Attribute.create(
                   name: attr[:name], type: attr[:type], is_array: attr[:is_array], workflow: workflow_record
                 )
@@ -26,6 +29,7 @@ module Ad
 
               # Save prompts
               @workflow_hash[:prompts].each_value do |prompt|
+                # puts "Saving Prompt: #{prompt}"
                 Ad::AgentArchitecture::Database::Prompt.create(
                   name: prompt[:name], path: prompt[:path], content: prompt[:content], workflow: workflow_record
                 )
@@ -33,22 +37,26 @@ module Ad
 
               # Save sections and steps
               @workflow_hash[:sections].each do |section|
+                # puts "Saving Section: #{section}"
                 section_record = Ad::AgentArchitecture::Database::Section.create(
                   name: section[:name], order: section[:order], workflow: workflow_record
                 )
 
                 section[:steps].each do |step|
+                  # puts "Saving Step: #{step}"
                   step_record = Ad::AgentArchitecture::Database::Step.create(
                     name: step[:name], order: step[:order], prompt: step[:prompt], section: section_record
                   )
 
                   step[:input_attributes].each do |attr_name|
+                    # puts "Saving Input Attribute for Step: #{attr_name}"
                     Ad::AgentArchitecture::Database::InputAttribute.create(
                       step: step_record, attribute: attribute_map[attr_name.to_sym]
                     )
                   end
 
                   step[:output_attributes].each do |attr_name|
+                    # puts "Saving Output Attribute for Step: #{attr_name}"
                     Ad::AgentArchitecture::Database::OutputAttribute.create(
                       step: step_record, attribute: attribute_map[attr_name.to_sym]
                     )
@@ -56,6 +64,9 @@ module Ad
                 end
               end
             end
+          rescue StandardError => e
+            puts "An error occurred: #{e.message}"
+            raise
           end
         end
       end

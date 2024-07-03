@@ -1,3 +1,10 @@
+## [0.0.15](https://github.com/appydave/ad-agent_architecture/compare/v0.0.14...v0.0.15) (2024-07-03)
+
+
+### Bug Fixes
+
+* DSL generator added ([06307ea](https://github.com/appydave/ad-agent_architecture/commit/06307ea666748df1fdcfe49028b775ee4a80f0da))
+
 ## [0.0.14](https://github.com/appydave/ad-agent_architecture/compare/v0.0.13...v0.0.14) (2024-07-03)
 
 

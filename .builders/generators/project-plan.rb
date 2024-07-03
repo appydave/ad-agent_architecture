@@ -11,8 +11,8 @@ KManager.action :project_plan do
         grid_layout(y: 190, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
         # Prompts need to support file read operation
+        todo(title: 'Visual graph of the workflow')
 
-        todo(title: 'Generate DSL for an Agent Architecture workflow')
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 
@@ -20,7 +20,6 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
-        todo(title: 'Visual graph of the workflow')
         todo(title: 'Horizontal')
         todo(title: 'Clicking on sections will show the steps in that section')
         todo(title: 'Clicking on attributes will show all attributes in the workflow')
@@ -36,6 +35,7 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'Generate DSL for an Agent Architecture workflow')
         todo(title: 'Attributes are auto created when used in a step, but not preconfigured')
         todo(title: 'Add support for project plan')
         todo(title: 'Fix the DB issue introduced via DSL refactor')

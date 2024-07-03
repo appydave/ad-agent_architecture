@@ -1,3 +1,10 @@
+## [0.0.14](https://github.com/appydave/ad-agent_architecture/compare/v0.0.13...v0.0.14) (2024-07-03)
+
+
+### Bug Fixes
+
+* add project plan document ([f32c277](https://github.com/appydave/ad-agent_architecture/commit/f32c277f197d794ec7426d81e6fa483d2ab5b79b))
+
 ## [0.0.13](https://github.com/appydave/ad-agent_architecture/compare/v0.0.12...v0.0.13) (2024-07-03)
 
 

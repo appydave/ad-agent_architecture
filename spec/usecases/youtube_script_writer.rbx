@@ -27,14 +27,16 @@ dsl = Agent.create('YouTube Script Writer') do
     attribute :meta_keywords, type: :array
     attribute :meta_topics, type: :array
     attribute :script, type: :string
+    attribute :keyword, type: :string
+    attribute :cats, type: :array, is_array: true
   end
-
   section('Research') do
     step('Basic Idea') do
       input :idea
       input :keyword
       prompt :working_idea
       output :ideas
+      output :cats
     end
 
     step('Basic Factsheet') do
@@ -95,4 +97,4 @@ workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Script
 # Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
 # Ad::AgentArchitecture::Report::WorkflowListReport.new.print
 
-Ad::AgentArchitecture::Report::DslGenerator.new(dsl.workflow, clipboard: false, display: true).dsl_for_workflow
+Ad::AgentArchitecture::Report::DslGenerator.new(dsl.workflow, clipboard: true, display: false).dsl_for_attributes

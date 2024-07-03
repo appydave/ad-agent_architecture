@@ -42,7 +42,7 @@ RSpec.describe Ad::AgentArchitecture::Report::DslGenerator do
   describe '#dsl_for_attributes' do
     subject { generator.dsl_for_attributes.gsub(/\s+/, ' ') }
 
-    it 'generates the correct DSL for attributes' do
+   it 'generates the correct DSL for attributes' do
       expect(subject)
         .to include('attributes do')
         .and include('attribute :idea, type: :string')

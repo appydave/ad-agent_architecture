@@ -1,3 +1,5 @@
+# file: lib/ad/agent_architecture/dsl/step_dsl.rb
+
 # frozen_string_literal: true
 
 module Ad
@@ -22,16 +24,24 @@ module Ad
           @section[:steps] << @step
         end
 
-        def input(attr_name, **_opts)
-          @step[:input_attributes] << attr_name
+        def input(name, **_opts)
+          infer_attribute(name)
+          @step[:input_attributes] << name
         end
 
-        def output(attr_name, **_opts)
-          @step[:output_attributes] << attr_name
+        def output(name, **_opts)
+          infer_attribute(name)
+          @step[:output_attributes] << name
         end
 
-        def prompt(prompt_text, **_opts)
-          @step[:prompt] = prompt_text
+        def prompt(prompt, **_opts)
+          @step[:prompt] = prompt
+        end
+
+        private
+
+        def infer_attribute(name)
+          AttributeDsl.new(workflow).infer_attribute(name)
         end
       end
     end

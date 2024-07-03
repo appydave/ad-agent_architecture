@@ -1,4 +1,3 @@
-puts 'yyyyyyy3'
 dsl = Agent.create('YouTube Script Writer') do
   settings do
     # Path is relatevie to this file
@@ -6,11 +5,16 @@ dsl = Agent.create('YouTube Script Writer') do
   end
 
   prompts do
-    prompt :working_idea, content: prompt_file("01-1-working-idea.txt")
-    prompt :basic_factsheet, content: prompt_file("01-2-basic-factsheet.txt")
-    prompt :video_ideas, content: prompt_file("01-3-video-ideas.txt")
-    prompt :expanded_factsheet, content: prompt_file("01-4-expanded-factsheet.txt")
-    prompt :meta_data, content: prompt_file("01-5-meta-data.txt")
+    prompt :working_idea,
+      content: prompt_file("01-1-working-idea.txt")
+    prompt :basic_factsheet, 
+      content: prompt_file("01-2-basic-factsheet.txt")
+    prompt :video_ideas, 
+      content: prompt_file("01-3-video-ideas.txt")
+    prompt :expanded_factsheet, 
+      content: prompt_file("01-4-expanded-factsheet.txt")
+    prompt :meta_data, 
+      content: prompt_file("01-5-meta-data.txt")
   end
 
   attributes do
@@ -35,7 +39,7 @@ dsl = Agent.create('YouTube Script Writer') do
 
     step('Basic Factsheet') do
       input :idea
-      prompt :basic_factsheete
+      prompt :basic_factsheet
       output :basic_factsheet
     end
 
@@ -90,18 +94,3 @@ workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Script
 
 Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
 Ad::AgentArchitecture::Report::WorkflowListReport.new.print
-
-# Fix the DB issue
-# Add support for project plan
-# Prompts need to support file read operation
-
-# Fix the auto attribute create
-# Include a report_attribute method or DSL under the tool namespace
-# Visual graph of the workflow
-# Horizontal
-# Clicking on sections will show the steps in that section
-# Clicking on attributes will show all attributes in the workflow
-# Clicking on prompts will show all prompts in the workflow
-# Clicking on dashboard will show visual hierarchy of the workflow
-# Need a runs button
-# VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20

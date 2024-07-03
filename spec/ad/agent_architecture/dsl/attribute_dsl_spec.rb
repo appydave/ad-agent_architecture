@@ -20,4 +20,26 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AttributeDsl do
       )
     end
   end
+
+  context 'when infer_attribute is called' do
+    subject { workflow[:attributes] }
+
+    before do
+      instance.infer_attribute(:description)
+      instance.infer_attribute(:tags)
+    end
+
+    it 'infers the type for new attributes' do
+      expect(subject).to include(
+        description: { name: :description, type: 'string', is_array: false },
+        tags: { name: :tags, type: 'array', is_array: true }
+      )
+    end
+
+    it 'does not override existing attributes' do
+      instance.attribute(:description, type: :text)
+      instance.infer_attribute(:description)
+      expect(subject[:description]).to eq({ name: :description, type: :text, is_array: false })
+    end
+  end
 end

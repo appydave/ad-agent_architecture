@@ -28,7 +28,7 @@ gem install ad-agent_architecture
 
 As a Developer, I want to understand the object graph and workflows for AI agents in multiple scenarios, so that I can build out AI applications effectively
 
-See all [stories](./STORIES.md)
+See [project plan](./docs/project-plan/project-plan.md)
 
 
 ## Usage

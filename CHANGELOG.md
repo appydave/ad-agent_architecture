@@ -1,3 +1,10 @@
+## [0.0.13](https://github.com/appydave/ad-agent_architecture/compare/v0.0.12...v0.0.13) (2024-07-03)
+
+
+### Bug Fixes
+
+* add listen GEM and watch RBS files, plus bugs in database save ([b95e9ff](https://github.com/appydave/ad-agent_architecture/commit/b95e9ffec2fd03780e890a9ec7ca3708a53c17ef))
+
 ## [0.0.12](https://github.com/appydave/ad-agent_architecture/compare/v0.0.11...v0.0.12) (2024-07-02)
 
 

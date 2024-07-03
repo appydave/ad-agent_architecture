@@ -1,6 +1,5 @@
 dsl = Agent.create('YouTube Script Writer') do
   settings do
-    # Path is relatevie to this file
     prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/youtube/script_writer')
   end
 
@@ -33,6 +32,7 @@ dsl = Agent.create('YouTube Script Writer') do
   section('Research') do
     step('Basic Idea') do
       input :idea
+      input :keyword
       prompt :working_idea
       output :ideas
     end
@@ -92,5 +92,7 @@ dsl
   
 workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Script Writer')
 
-Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
-Ad::AgentArchitecture::Report::WorkflowListReport.new.print
+# Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
+# Ad::AgentArchitecture::Report::WorkflowListReport.new.print
+
+Ad::AgentArchitecture::Report::DslGenerator.new(dsl.workflow, clipboard: false, display: true).dsl_for_workflow

@@ -24,6 +24,7 @@ require 'ad/agent_architecture/dsl/agent_dsl'
 require 'ad/agent_architecture/dsl/actions/save_database'
 require 'ad/agent_architecture/dsl/actions/save_json'
 require 'ad/agent_architecture/dsl/actions/save_yaml'
+require 'ad/agent_architecture/report/dsl_generator'
 require 'ad/agent_architecture/report/workflow_detail_report'
 require 'ad/agent_architecture/report/workflow_list_report'
 

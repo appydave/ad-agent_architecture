@@ -12,7 +12,7 @@ KManager.action :project_plan do
 
         # Prompts need to support file read operation
 
-        todo(title: 'Include a report_attribute method or DSL under the tool namespace')
+        todo(title: 'Generate DSL for an Agent Architecture workflow')
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 

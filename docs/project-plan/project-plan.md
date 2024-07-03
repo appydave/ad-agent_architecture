@@ -8,7 +8,6 @@ The next ticket to work on
 
 ## To Do
 
-
 List of tickets to do
 
 ![](project_todo.svg)

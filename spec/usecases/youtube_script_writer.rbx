@@ -1,19 +1,14 @@
-dsl = Agent.create('YouTube Script Writer XXX') do
+dsl = Agent.create('YouTube Script Writer') do
   settings do
     prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/youtube/script_writer')
   end
 
   prompts do
-    prompt :working_idea,
-      content: prompt_file("01-1-working-idea.txt")
-    prompt :basic_factsheet, 
-      content: prompt_file("01-2-basic-factsheet.txt")
-    prompt :video_ideas, 
-      content: prompt_file("01-3-video-ideas.txt")
-    prompt :expanded_factsheet, 
-      content: prompt_file("01-4-expanded-factsheet.txt")
-    prompt :meta_data, 
-      content: prompt_file("01-5-meta-data.txt")
+    prompt :working_idea          , content: prompt_file("01-1-working-idea.txt")
+    prompt :basic_factsheet       , content: prompt_file("01-2-basic-factsheet.txt")
+    prompt :video_ideas           , content: prompt_file("01-3-video-ideas.txt")
+    prompt :expanded_factsheet    , content: prompt_file("01-4-expanded-factsheet.txt")
+    prompt :meta_data             , content: prompt_file("01-5-meta-data.txt")
   end
 
   attributes do
@@ -93,5 +88,4 @@ workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Script
 
 # Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
 Ad::AgentArchitecture::Report::WorkflowListReport.new.print
-
-Ad::AgentArchitecture::Report::DslGenerator.new(dsl.workflow, clipboard: true, display: false).dsl_for_attributes
+# Ad::AgentArchitecture::Report::DslGenerator.new(dsl.workflow, clipboard: true, display: false).dsl_for_attributes

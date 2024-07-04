@@ -9,7 +9,7 @@ module Ad
           super(workflow)
 
           @section = { name: name, order: order, steps: [] }
-          data[:sections] << @section
+          sections << @section
           @current_step_order = 1
         end
 

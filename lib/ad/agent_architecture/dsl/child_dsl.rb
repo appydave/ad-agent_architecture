@@ -5,6 +5,7 @@ module Ad
     module Dsl
       # This is the base class for all child DSLs
       class ChildDsl
+        include DataAccessors
         attr_reader :workflow
 
         def initialize(workflow_dsl)

@@ -5,6 +5,8 @@ module Ad
     module Dsl
       # This class is responsible for defining the workflow DSL
       class WorkflowDsl
+        include DataAccessors
+
         attr_reader :data
 
         def initialize(name)

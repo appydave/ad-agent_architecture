@@ -13,6 +13,7 @@ Ad::AgentArchitecture::Database::CreateSchema.new(DB).execute
 
 require 'ad/agent_architecture/database/models'
 require 'ad/agent_architecture/database/sql_query'
+require 'ad/agent_architecture/dsl/data_accessors'
 require 'ad/agent_architecture/dsl/child_dsl'
 require 'ad/agent_architecture/dsl/attribute_dsl'
 require 'ad/agent_architecture/dsl/prompt_dsl'

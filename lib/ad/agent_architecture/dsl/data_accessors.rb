@@ -32,6 +32,11 @@ module Ad
         def get_prompt(name)
           prompts[name.to_sym] || prompts[name.to_s]
         end
+
+        def get_prompt_content(name)
+          lookup = get_prompt(name)
+          lookup ? lookup[:content] : nil
+        end
       end
     end
   end

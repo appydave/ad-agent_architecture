@@ -64,6 +64,12 @@ RSpec.describe Ad::AgentArchitecture::Dsl::DataAccessors do
     end
   end
 
+  describe '#get_prompt_content' do
+    it 'retrieves a prompt content by name' do
+      expect(workflow.get_prompt_content(:test_prompt)).to eq('content')
+    end
+  end
+
   describe '#sections' do
     it 'returns the sections array from the workflow data' do
       expect(workflow.sections).to eq(workflow_data[:sections])

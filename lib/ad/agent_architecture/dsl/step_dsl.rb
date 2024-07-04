@@ -37,7 +37,8 @@ module Ad
         end
 
         def prompt(prompt, **_opts)
-          lookup_prompt = get_prompt(prompt)
+          lookup_prompt = get_prompt_content(prompt)
+
           @step[:prompt] = lookup_prompt || prompt
           self
         end

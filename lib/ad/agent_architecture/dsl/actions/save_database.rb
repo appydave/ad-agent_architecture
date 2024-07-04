@@ -11,7 +11,7 @@ module Ad
           end
 
           def save
-            # puts JSON.pretty_generate(@workflow_hash)
+            puts JSON.pretty_generate(@workflow_hash)
             DB.transaction do
               # puts "Saving Workflow: #{@workflow_hash[:name]}"
               # Save workflow
@@ -64,7 +64,7 @@ module Ad
                 end
               end
             end
-          rescue StandardError => e
+          rescue StandardError
             puts "An error occurred: #{e.message}"
             raise
           end

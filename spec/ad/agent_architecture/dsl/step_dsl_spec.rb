@@ -58,7 +58,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
         subject { steps.first[:prompt] }
 
         before do
-          instance.prompts[:some_prompt] = 'Analyze [transcript] and generate a preliminary outline for a blog post.'
+          instance.prompts[:some_prompt] = { name: :some_prompt, content: 'Analyze [transcript] and generate a preliminary outline for a blog post.' }
           instance.prompt :some_prompt
         end
 

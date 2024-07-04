@@ -53,4 +53,51 @@ RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
       it { is_expected.to eq('Analyze [transcript] and generate a preliminary outline for a blog post.') }
     end
   end
+
+  describe '#infer_attribute' do
+    subject { data[:attributes] }
+
+    context 'when infer_attribute is called for new attributes' do
+      context 'when infer_attribute has not been called' do
+        it 'does not infer the type for new attributes' do
+          expect(subject).to be_empty
+        end
+      end
+
+      context 'when infer_attribute is called for array attribute' do
+        before do
+          instance.send(:infer_attribute, :tags)
+        end
+
+        it 'infers the type for new attributes' do
+          expect(subject).to include(
+            tags: { name: :tags, type: 'array', is_array: true }
+          )
+        end
+      end
+
+      context 'when infer_attribute is called for string attribute' do
+        before do
+          instance.send(:infer_attribute, :description)
+        end
+
+        it 'infers the type for new attributes' do
+          expect(subject).to include(
+            description: { name: :description, type: 'string', is_array: false }
+          )
+        end
+      end
+    end
+
+    context 'when infer_attribute is called for existing attributes' do
+      before do
+        data[:attributes][:items] = { name: :description, type: :text, is_array: false }
+        instance.send(:infer_attribute, :description)
+      end
+
+      it 'does not override existing attributes' do
+        expect(subject[:items]).to include(name: :description, type: :text, is_array: false)
+      end
+    end
+  end
 end

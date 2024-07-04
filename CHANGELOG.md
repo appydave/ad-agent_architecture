@@ -1,3 +1,10 @@
+## [0.0.20](https://github.com/appydave/ad-agent_architecture/compare/v0.0.19...v0.0.20) (2024-07-04)
+
+
+### Bug Fixes
+
+* refactor and test infer attribute ([16921ba](https://github.com/appydave/ad-agent_architecture/commit/16921babc04bbd3716c1099845c583794945f828))
+
 ## [0.0.19](https://github.com/appydave/ad-agent_architecture/compare/v0.0.18...v0.0.19) (2024-07-04)
 
 

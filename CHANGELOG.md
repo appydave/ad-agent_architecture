@@ -1,3 +1,10 @@
+## [0.0.18](https://github.com/appydave/ad-agent_architecture/compare/v0.0.17...v0.0.18) (2024-07-04)
+
+
+### Bug Fixes
+
+* provide data accessor module ([ef76767](https://github.com/appydave/ad-agent_architecture/commit/ef76767b1f40b22c23f46c3ed97ccc0e2c1e4d27))
+
 ## [0.0.17](https://github.com/appydave/ad-agent_architecture/compare/v0.0.16...v0.0.17) (2024-07-03)
 
 

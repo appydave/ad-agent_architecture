@@ -2,11 +2,11 @@
 
 RSpec.describe Ad::AgentArchitecture::Dsl::AttributeDsl do
   let(:instance) { described_class.new(workflow) }
-  let(:dsl) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
-  let(:workflow) { dsl.workflow }
+  let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
+  let(:data) { workflow.data }
 
   context 'when attributes are added to workflow' do
-    subject { workflow[:attributes] }
+    subject { data[:attributes] }
 
     before do
       instance.attribute(:title, type: :string)
@@ -22,7 +22,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AttributeDsl do
   end
 
   context 'when infer_attribute is called' do
-    subject { workflow[:attributes] }
+    subject { data[:attributes] }
 
     before do
       instance.infer_attribute(:description)

@@ -1,4 +1,4 @@
-dsl = Agent.create('YouTube Script Writer') do
+dsl = Agent.create('YouTube Script Writer XXX') do
   settings do
     prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/youtube/script_writer')
   end
@@ -27,16 +27,13 @@ dsl = Agent.create('YouTube Script Writer') do
     attribute :meta_keywords, type: :array
     attribute :meta_topics, type: :array
     attribute :script, type: :string
-    attribute :keyword, type: :string
-    attribute :cats, type: :array, is_array: true
   end
+
   section('Research') do
     step('Basic Idea') do
-      input :idea
-      input :keyword
+      input :best_idea
       prompt :working_idea
       output :ideas
-      output :cats
     end
 
     step('Basic Factsheet') do
@@ -95,6 +92,6 @@ dsl
 workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Script Writer')
 
 # Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
-# Ad::AgentArchitecture::Report::WorkflowListReport.new.print
+Ad::AgentArchitecture::Report::WorkflowListReport.new.print
 
 Ad::AgentArchitecture::Report::DslGenerator.new(dsl.workflow, clipboard: true, display: false).dsl_for_attributes

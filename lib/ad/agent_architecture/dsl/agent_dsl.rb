@@ -38,21 +38,21 @@ module Ad
         end
 
         def save
-          Ad::AgentArchitecture::Dsl::Actions::SaveDatabase.new(@workflow.workflow).save
+          Ad::AgentArchitecture::Dsl::Actions::SaveDatabase.new(@workflow.data).save
 
           self
         end
 
         def save_json(file_name = nil)
           full_file_name = file_name || 'workflow.json'
-          Ad::AgentArchitecture::Dsl::Actions::SaveJson.new(@workflow.workflow).save(full_file_name)
+          Ad::AgentArchitecture::Dsl::Actions::SaveJson.new(@workflow.data).save(full_file_name)
 
           self
         end
 
         def save_yaml(file_name = nil)
           full_file_name = file_name || 'workflow.yaml'
-          Ad::AgentArchitecture::Dsl::Actions::SaveYaml.new(@workflow.workflow).save(full_file_name)
+          Ad::AgentArchitecture::Dsl::Actions::SaveYaml.new(@workflow.data).save(full_file_name)
 
           self
         end

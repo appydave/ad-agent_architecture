@@ -6,13 +6,13 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentDsl do
   let(:name) { 'Blog Post Workflow' }
 
   context 'when agent is instantiated' do
-    subject { instance.workflow.workflow }
+    subject { instance.workflow.data }
 
     it { is_expected.to include(name: 'Blog Post Workflow', settings: {}, attributes: {}, prompts: {}, sections: []) }
   end
 
   context 'when attributes are added to agent' do
-    subject { instance.workflow.workflow[:attributes] }
+    subject { instance.workflow.data[:attributes] }
 
     before do
       instance.attributes do
@@ -24,7 +24,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentDsl do
   end
 
   context 'when prompts are added to agent' do
-    subject { instance.workflow.workflow[:prompts] }
+    subject { instance.workflow.data[:prompts] }
 
     before do
       instance.prompts do
@@ -36,7 +36,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AgentDsl do
   end
 
   context 'when section is added to agent' do
-    subject { instance.workflow.workflow[:sections] }
+    subject { instance.workflow.data[:sections] }
 
     before do
       instance.section('Section 1')

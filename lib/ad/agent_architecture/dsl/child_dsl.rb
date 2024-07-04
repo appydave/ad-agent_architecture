@@ -7,8 +7,12 @@ module Ad
       class ChildDsl
         attr_reader :workflow
 
-        def initialize(workflow)
-          @workflow = workflow
+        def initialize(workflow_dsl)
+          @workflow = workflow_dsl
+        end
+
+        def data
+          @workflow.data
         end
       end
     end

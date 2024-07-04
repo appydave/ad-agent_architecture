@@ -7,7 +7,7 @@ module Ad
       class SettingsDsl < ChildDsl
         def method_missing(name, *args, &block)
           if args.length == 1 && block.nil?
-            workflow[:settings][name] = args.first
+            data[:settings][name] = args.first
           else
             super
           end

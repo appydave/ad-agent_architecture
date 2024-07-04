@@ -2,8 +2,8 @@
 
 RSpec.describe Ad::AgentArchitecture::Dsl::SettingsDsl do
   let(:instance) { described_class.new(workflow) }
-  let(:dsl) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
-  let(:workflow) { dsl.workflow }
+  let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
+  let(:data) { workflow.data }
 
   context 'when settings are added to workflow' do
     subject { instance }

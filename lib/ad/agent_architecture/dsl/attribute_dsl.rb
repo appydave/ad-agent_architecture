@@ -8,17 +8,17 @@ module Ad
         def attribute(name, type:, is_array: false)
           raise ArgumentError, 'Attribute name must be a string or symbol' unless name.is_a?(String) || name.is_a?(Symbol)
 
-          workflow[:attributes][name] = { name: name, type: type, is_array: is_array }
+          data[:attributes][name] = { name: name, type: type, is_array: is_array }
         end
 
         def infer_attribute(name)
           raise ArgumentError, 'Attribute name must be a string or symbol' unless name.is_a?(String) || name.is_a?(Symbol)
 
-          return if workflow[:attributes].key?(name)
+          return if data[:attributes].key?(name)
 
           # May want to add more sophisticated type inference here
           type = name.to_s.end_with?('s') ? 'array' : 'string'
-          workflow[:attributes][name] = { name: name, type: type, is_array: type == 'array' }
+          data[:attributes][name] = { name: name, type: type, is_array: type == 'array' }
         end
       end
     end

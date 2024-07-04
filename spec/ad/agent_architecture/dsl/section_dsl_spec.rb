@@ -2,10 +2,10 @@
 
 RSpec.describe Ad::AgentArchitecture::Dsl::SectionDsl do
   let(:instance) { described_class.new(workflow, name, order) }
+  let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
+  let(:data) { workflow.data }
 
-  let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name').workflow }
-
-  let(:sections) { workflow[:sections] }
+  let(:sections) { data[:sections] }
   let(:name) { 'Analysis' }
   let(:order) { 1 }
 

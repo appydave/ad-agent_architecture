@@ -1,4 +1,4 @@
-dsl = Agent.create(name: 'YouTube Title Creator') do
+dsl = Agent.create('YouTube Title Creator') do
   prompts do
     prompt :best_practice, path: 'youtube/title_creator/best_practice.md'
   end
@@ -11,12 +11,12 @@ dsl = Agent.create(name: 'YouTube Title Creator') do
     attribute :working_title, type: :string
   end
 
-  section(name: 'Research') do
-    step(name: 'Starting Context') do
+  section('Research') do
+    step('Starting Context') do
       prompt :best_practice
     end
 
-    step(name: 'Basic titles') do
+    step('Basic titles') do
       input :start_title
       input :start_keyword
       input :transcript
@@ -33,7 +33,7 @@ dsl = Agent.create(name: 'YouTube Title Creator') do
       output :start_keyword
     end
 
-    step(name: 'Working Title') do
+    step('Working Title') do
       input :potential_titles
       # action do
       #   heading 'Choose a working title from the potential titles.'
@@ -42,24 +42,7 @@ dsl = Agent.create(name: 'YouTube Title Creator') do
       output :working_title
     end
   end
-
-  # In the analyis section we will varify the quality of the title from various perspectives
-  section(name: 'Analysis') do
-    step(name: 'Title Analysis Xmen') do
-      input :working_title
-      prompt 'Analyze the title [working_title] for quality and effectiveness.' 
-      output :working_title
-    end
-
-    step(name: 'Title Quality') do
-      input :working_title
-      prompt 'Rate the quality of the title [working_title].'
-      output :working_title
-    end
-  end
 end
-
-PROMT_XMEN = "DAVID"
 
 dsl
   .save
@@ -67,5 +50,5 @@ dsl
   
 workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Title Creator')
 
-Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
+# Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
 Ad::AgentArchitecture::Report::WorkflowListReport.new.print

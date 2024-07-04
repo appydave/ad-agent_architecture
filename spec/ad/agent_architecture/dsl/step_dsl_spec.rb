@@ -2,15 +2,16 @@
 
 RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
   let(:instance) { described_class.new(workflow, section, name, order) }
-  let(:section) { workflow[:sections].first }
+  let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
+  let(:data) { workflow.data }
+
+  let(:section) { data[:sections].first }
   let(:steps) { section[:steps] }
   let(:name) { 'Generate Outline' }
   let(:order) { 1 }
-  let(:dsl) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
-  let(:workflow) { dsl.workflow }
 
   before do
-    dsl.section('Section Name')
+    workflow.section('Section Name')
   end
 
   describe '#step' do

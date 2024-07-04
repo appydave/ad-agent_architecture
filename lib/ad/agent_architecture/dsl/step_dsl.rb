@@ -35,6 +35,7 @@ module Ad
         end
 
         def prompt(prompt, **_opts)
+          # lookup_prompt = workflow.get_prompt(prompt)
           @step[:prompt] = prompt
         end
 

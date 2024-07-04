@@ -4,11 +4,11 @@
 
 RSpec.describe Ad::AgentArchitecture::Dsl::PromptDsl do
   let(:instance) { described_class.new(workflow) }
-  let(:dsl) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
-  let(:workflow) { dsl.workflow }
+  let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
+  let(:data) { workflow.data }
 
   context 'when prompts are added to workflow' do
-    subject { workflow[:prompts] }
+    subject { data[:prompts] }
 
     before do
       instance.prompt(:best_practice, content: 'Create 5 titles')
@@ -23,7 +23,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::PromptDsl do
 
     before do
       File.write(prompt_file_path, 'Create 5 titles')
-      dsl.settings.prompt_path(temp_dir)
+      workflow.settings.prompt_path(temp_dir)
     end
 
     after do

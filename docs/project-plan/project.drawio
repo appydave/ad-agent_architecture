@@ -1,59 +1,62 @@
-<mxfile host="HsP">
-  <diagram id="ja0" name="In progress">
+<mxfile host="8nL">
+  <diagram id="b04" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_ja0" parent="ja0"/>
-        <mxCell id="node_root_ja0" parent="page_root_ja0"/>
-        <mxCell id="ja0-2" value="Visual graph of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_ja0">
+        <mxCell id="page_root_b04" parent="b04"/>
+        <mxCell id="node_root_b04" parent="page_root_b04"/>
+        <mxCell id="b04-2" value="Prompt setter in step DSL will now lookup common prompts" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_b04">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="lFP" name="To Do">
+  <diagram id="pnQ" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_lFP" parent="lFP"/>
-        <mxCell id="node_root_lFP" parent="page_root_lFP"/>
-        <mxCell id="lFP-2" value="Horizontal" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_lFP">
+        <mxCell id="page_root_pnQ" parent="pnQ"/>
+        <mxCell id="node_root_pnQ" parent="page_root_pnQ"/>
+        <mxCell id="pnQ-2" value="Visual graph of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pnQ">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="lFP-3" value="Clicking on sections will show the steps in that section" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_lFP">
+        <mxCell id="pnQ-3" value="Horizontal" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pnQ">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="lFP-4" value="Clicking on attributes will show all attributes in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_lFP">
+        <mxCell id="pnQ-4" value="Clicking on sections will show the steps in that section" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pnQ">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="lFP-5" value="Clicking on prompts will show all prompts in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_lFP">
+        <mxCell id="pnQ-5" value="Clicking on attributes will show all attributes in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pnQ">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="lFP-6" value="Clicking on dashboard will show visual hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_lFP">
+        <mxCell id="pnQ-6" value="Clicking on prompts will show all prompts in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pnQ">
           <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="lFP-7" value="Need a runs button" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_lFP">
+        <mxCell id="pnQ-7" value="Clicking on dashboard will show visual hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pnQ">
           <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="lFP-8" value="VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_lFP">
+        <mxCell id="pnQ-8" value="Need a runs button" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pnQ">
           <mxGeometry x="10" y="170" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="pnQ-9" value="VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pnQ">
+          <mxGeometry x="330" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="0VX" name="Done">
+  <diagram id="trc" name="Done">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_0VX" parent="0VX"/>
-        <mxCell id="node_root_0VX" parent="page_root_0VX"/>
-        <mxCell id="0VX-2" value="Generate DSL for an Agent Architecture workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_0VX">
+        <mxCell id="page_root_trc" parent="trc"/>
+        <mxCell id="node_root_trc" parent="page_root_trc"/>
+        <mxCell id="trc-2" value="Generate DSL for an Agent Architecture workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_trc">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="0VX-3" value="Attributes are auto created when used in a step, but not preconfigured" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_0VX">
+        <mxCell id="trc-3" value="Attributes are auto created when used in a step, but not preconfigured" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_trc">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="0VX-4" value="Add support for project plan" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_0VX">
+        <mxCell id="trc-4" value="Add support for project plan" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_trc">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="0VX-5" value="Fix the DB issue introduced via DSL refactor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_0VX">
+        <mxCell id="trc-5" value="Fix the DB issue introduced via DSL refactor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_trc">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>

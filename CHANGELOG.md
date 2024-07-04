@@ -1,3 +1,10 @@
+## [0.0.21](https://github.com/appydave/ad-agent_architecture/compare/v0.0.20...v0.0.21) (2024-07-04)
+
+
+### Bug Fixes
+
+* step.prompt will now lookup from defined prompts ([b2bbe81](https://github.com/appydave/ad-agent_architecture/commit/b2bbe8139d87dcb5c7e5bf1dd4ba9175b1491d09))
+
 ## [0.0.20](https://github.com/appydave/ad-agent_architecture/compare/v0.0.19...v0.0.20) (2024-07-04)
 
 

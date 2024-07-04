@@ -1,3 +1,10 @@
+## [0.0.19](https://github.com/appydave/ad-agent_architecture/compare/v0.0.18...v0.0.19) (2024-07-04)
+
+
+### Bug Fixes
+
+* add data accessor tests ([533e067](https://github.com/appydave/ad-agent_architecture/commit/533e06780633980e1f9e17134b23acf3d915f2d9))
+
 ## [0.0.18](https://github.com/appydave/ad-agent_architecture/compare/v0.0.17...v0.0.18) (2024-07-04)
 
 

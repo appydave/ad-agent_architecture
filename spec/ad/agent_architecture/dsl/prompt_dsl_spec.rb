@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# I need to use a temp file to store the prompt and then read the content of the file
-
 RSpec.describe Ad::AgentArchitecture::Dsl::PromptDsl do
   let(:instance) { described_class.new(workflow) }
   let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }

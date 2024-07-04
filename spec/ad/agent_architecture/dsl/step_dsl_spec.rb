@@ -46,11 +46,24 @@ RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
     context 'when prompt is added to step' do
       subject { steps.first[:prompt] }
 
-      before do
-        instance.prompt 'Analyze [transcript] and generate a preliminary outline for a blog post.'
+      context 'when prompt is not in defined prompts' do
+        before do
+          instance.prompt 'Analyze [transcript] and generate a preliminary outline for a blog post.'
+        end
+
+        it { is_expected.to eq('Analyze [transcript] and generate a preliminary outline for a blog post.') }
       end
 
-      it { is_expected.to eq('Analyze [transcript] and generate a preliminary outline for a blog post.') }
+      context 'when prompt is in defined prompts' do
+        subject { steps.first[:prompt] }
+
+        before do
+          instance.prompts[:some_prompt] = 'Analyze [transcript] and generate a preliminary outline for a blog post.'
+          instance.prompt :some_prompt
+        end
+
+        it { is_expected.to eq('Analyze [transcript] and generate a preliminary outline for a blog post.') }
+      end
     end
   end
 

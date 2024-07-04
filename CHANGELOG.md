@@ -1,3 +1,10 @@
+## [0.0.22](https://github.com/appydave/ad-agent_architecture/compare/v0.0.21...v0.0.22) (2024-07-04)
+
+
+### Bug Fixes
+
+* bug in prompt lookup ([40ab2bb](https://github.com/appydave/ad-agent_architecture/commit/40ab2bbf7b7145eefa861ef621cc7381ffe0cd92))
+
 ## [0.0.21](https://github.com/appydave/ad-agent_architecture/compare/v0.0.20...v0.0.21) (2024-07-04)
 
 

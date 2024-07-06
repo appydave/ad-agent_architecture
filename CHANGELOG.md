@@ -1,3 +1,10 @@
+## [0.0.23](https://github.com/appydave/ad-agent_architecture/compare/v0.0.22...v0.0.23) (2024-07-06)
+
+
+### Bug Fixes
+
+* Add features and improvements to DSL and Agent Data Builder ([740261c](https://github.com/appydave/ad-agent_architecture/commit/740261c785ce8500d67d479f7ca8967baa4a4ab5))
+
 ## [0.0.22](https://github.com/appydave/ad-agent_architecture/compare/v0.0.21...v0.0.22) (2024-07-04)
 
 

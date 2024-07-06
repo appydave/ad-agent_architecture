@@ -1,78 +1,99 @@
-<mxfile host="Q0X">
-  <diagram id="yIc" name="In progress">
+<mxfile host="iRw">
+  <diagram id="7yu" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_yIc" parent="yIc"/>
-        <mxCell id="node_root_yIc" parent="page_root_yIc"/>
-        <mxCell id="yIc-2" value="Add saved workflow ID and save? to the DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_yIc">
-          <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="yIc-3" value="Prompt set in step DSL will now lookup common prompts" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_yIc">
-          <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="yIc-4" value="Create tests for Agent Data Builder and hook up to save YAML/JSON" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_yIc">
-          <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="yIc-5" value="Settings need to persist in the settings or workflow table" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_yIc">
-          <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="yIc-6" value="Add add title name &amp; description support to Agent Data Builder" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_yIc">
-          <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="yIc-7" value="Add fluent method access to all DSLs" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_yIc">
-          <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
-        </mxCell>
+        <mxCell id="page_root_7yu" parent="7yu"/>
+        <mxCell id="node_root_7yu" parent="page_root_7yu"/>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="QAD" name="To Do">
+  <diagram id="KWw" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_QAD" parent="QAD"/>
-        <mxCell id="node_root_QAD" parent="page_root_QAD"/>
-        <mxCell id="QAD-2" value="Visual graph of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QAD">
+        <mxCell id="page_root_KWw" parent="KWw"/>
+        <mxCell id="node_root_KWw" parent="page_root_KWw"/>
+        <mxCell id="KWw-2" value="Visual graph of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QAD-3" value="Horizontal" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QAD">
+        <mxCell id="KWw-3" value="Clicking on sections will show the steps in that section" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QAD-4" value="Clicking on sections will show the steps in that section" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QAD">
+        <mxCell id="KWw-4" value="Clicking on attributes will show all attributes in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QAD-5" value="Clicking on attributes will show all attributes in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QAD">
+        <mxCell id="KWw-5" value="Clicking on prompts will show all prompts in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QAD-6" value="Clicking on prompts will show all prompts in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QAD">
+        <mxCell id="KWw-6" value="Clicking on dashboard will show visual hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
           <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QAD-7" value="Clicking on dashboard will show visual hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QAD">
+        <mxCell id="KWw-7" value="Need a runs button" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
           <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QAD-8" value="Need a runs button" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QAD">
+        <mxCell id="KWw-8" value="VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
           <mxGeometry x="10" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="QAD-9" value="VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_QAD">
+        <mxCell id="KWw-9" value="Report: Simple hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
           <mxGeometry x="330" y="170" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KWw-10" value="Generator: Agent Framework CrewAI" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
+          <mxGeometry x="650" y="170" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KWw-11" value="Generator: Agent Framework Langchain" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
+          <mxGeometry x="10" y="250" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KWw-12" value="Generator: Agent Framework Rasa" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
+          <mxGeometry x="330" y="250" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KWw-13" value="Generator: Agent Framework Botpress" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
+          <mxGeometry x="650" y="250" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KWw-14" value="Generator: Agent Framework Dialogflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
+          <mxGeometry x="10" y="330" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KWw-15" value="Generator: Agent Framework Microsoft Bot Framework" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_KWw">
+          <mxGeometry x="330" y="330" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="G2r" name="Done">
+  <diagram id="vXg" name="Done">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_G2r" parent="G2r"/>
-        <mxCell id="node_root_G2r" parent="page_root_G2r"/>
-        <mxCell id="G2r-2" value="Generate DSL for an Agent Architecture workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_G2r">
+        <mxCell id="page_root_vXg" parent="vXg"/>
+        <mxCell id="node_root_vXg" parent="page_root_vXg"/>
+        <mxCell id="vXg-2" value="Steps display horizontally" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="G2r-3" value="Attributes are auto created when used in a step, but not preconfigured" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_G2r">
+        <mxCell id="vXg-3" value="Add saved workflow ID and save? to the DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="G2r-4" value="Add support for project plan" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_G2r">
+        <mxCell id="vXg-4" value="Prompt set in step DSL will now lookup common prompts" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="G2r-5" value="Fix the DB issue introduced via DSL refactor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_G2r">
+        <mxCell id="vXg-5" value="Create tests for Agent Data Builder and hook up to save YAML/JSON" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vXg-6" value="Settings need to persist in the settings or workflow table" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
+          <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vXg-7" value="Add add title name &amp; description support to Agent Data Builder" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
+          <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vXg-8" value="Add fluent method access to all DSLs" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
+          <mxGeometry x="10" y="170" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vXg-9" value="Generate DSL for an Agent Architecture workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
+          <mxGeometry x="330" y="170" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vXg-10" value="Attributes are auto created when used in a step, but not preconfigured" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
+          <mxGeometry x="650" y="170" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vXg-11" value="Add support for project plan" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
+          <mxGeometry x="10" y="250" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vXg-12" value="Fix the DB issue introduced via DSL refactor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_vXg">
+          <mxGeometry x="330" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

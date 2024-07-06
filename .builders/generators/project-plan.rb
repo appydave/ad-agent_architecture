@@ -12,12 +12,6 @@ KManager.action :project_plan do
 
         # Prompts need to support file read operation
 
-        todo(title: 'Add saved workflow ID and save? to the DSL')
-        todo(title: 'Prompt set in step DSL will now lookup common prompts')
-        todo(title: 'Create tests for Agent Data Builder and hook up to save YAML/JSON')
-        todo(title: 'Settings need to persist in the settings or workflow table')
-        todo(title: 'Add add title name & description support to Agent Data Builder')
-        todo(title: 'Add fluent method access to all DSLs')
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 
@@ -29,14 +23,19 @@ KManager.action :project_plan do
         # todo(title: 'Add hydrate DSL from saved JSON')
         # todo(title: 'Geneate DSL structure from saved YAML')
         todo(title: 'Visual graph of the workflow')
-        todo(title: 'Horizontal')
         todo(title: 'Clicking on sections will show the steps in that section')
         todo(title: 'Clicking on attributes will show all attributes in the workflow')
         todo(title: 'Clicking on prompts will show all prompts in the workflow')
         todo(title: 'Clicking on dashboard will show visual hierarchy of the workflow')
         todo(title: 'Need a runs button')
         todo(title: 'VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20')
-
+        todo(title: 'Report: Simple hierarchy of the workflow')
+        todo(title: 'Generator: Agent Framework CrewAI')
+        todo(title: 'Generator: Agent Framework Langchain')
+        todo(title: 'Generator: Agent Framework Rasa')
+        todo(title: 'Generator: Agent Framework Botpress')
+        todo(title: 'Generator: Agent Framework Dialogflow')
+        todo(title: 'Generator: Agent Framework Microsoft Bot Framework')
       end
       .page('Done', theme: :style_06, margin_left: 0, margin_top: 0) do
 
@@ -44,6 +43,13 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'Steps display horizontally')
+        todo(title: 'Add saved workflow ID and save? to the DSL')
+        todo(title: 'Prompt set in step DSL will now lookup common prompts')
+        todo(title: 'Create tests for Agent Data Builder and hook up to save YAML/JSON')
+        todo(title: 'Settings need to persist in the settings or workflow table')
+        todo(title: 'Add add title name & description support to Agent Data Builder')
+        todo(title: 'Add fluent method access to all DSLs')
         todo(title: 'Generate DSL for an Agent Architecture workflow')
         todo(title: 'Attributes are auto created when used in a step, but not preconfigured')
         todo(title: 'Add support for project plan')

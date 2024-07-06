@@ -21,6 +21,7 @@ Metrics/BlockLength:
   Exclude:
     - "**/spec/**/*"
     - "*.gemspec"
+    - "lib/ad/agent_architecture/dsl/actions/save_database.rb"
   AllowedMethods:
     - configure
     - context
@@ -91,6 +92,10 @@ Lint/AmbiguousBlockAssociation:
 Style/AccessorGrouping:
   Enabled: false
 
+Naming/PredicateName:
+  Exclude:
+    - "lib/ad/agent_architecture/dsl/attribute_dsl.rb"
+
 Metrics/AbcSize:
   Exclude:
     - "lib/ad/agent_architecture/**/*"
@@ -123,6 +128,7 @@ RSpec/MultipleExpectations:
   Max: 3
   Exclude:
     - "spec/ad/agent_architecture/dsl/actions/save_database_spec.rb"
+    - "spec/ad/agent_architecture/report/agent_data_builder_spec.rb"
 
 RSpec/MultipleMemoizedHelpers:
   Enabled: false

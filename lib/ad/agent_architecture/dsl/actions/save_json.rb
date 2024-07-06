@@ -8,13 +8,12 @@ module Ad
       module Actions
         # Save workflow graph to JSON file
         class SaveJson
-          def initialize(workflow_hash)
-            @workflow_hash = workflow_hash
+          def initialize(hash)
+            @hash = hash
           end
 
           def save(file_name)
-            # Pretty JSON
-            File.write(file_name, JSON.pretty_generate(@workflow_hash))
+            File.write(file_name, JSON.pretty_generate(@hash))
           end
         end
       end

@@ -3,6 +3,7 @@
 require 'sequel'
 require 'sqlite3'
 require 'k_log'
+require 'cmdlet'
 
 require 'ad/agent_architecture/version'
 require 'ad/agent_architecture/database/create_schema'
@@ -26,6 +27,7 @@ require 'ad/agent_architecture/dsl/actions/save_database'
 require 'ad/agent_architecture/dsl/actions/save_json'
 require 'ad/agent_architecture/dsl/actions/save_yaml'
 require 'ad/agent_architecture/report/dsl_generator'
+require 'ad/agent_architecture/report/agent_data_builder'
 require 'ad/agent_architecture/report/workflow_detail_report'
 require 'ad/agent_architecture/report/workflow_list_report'
 

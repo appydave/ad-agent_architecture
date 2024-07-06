@@ -5,14 +5,39 @@ RSpec.describe Ad::AgentArchitecture::Dsl::PromptDsl do
   let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
   let(:data) { workflow.data }
 
-  context 'when prompts are added to workflow' do
-    subject { data[:prompts] }
+  context 'when adding prompt to worflow' do
+    context 'when standard format' do
+      subject { data[:prompts] }
 
-    before do
-      instance.prompt(:best_practice, content: 'Create 5 titles')
+      before do
+        instance.prompt(:best_practice, content: 'Create 5 titles')
+      end
+
+      it { is_expected.to include(best_practice: { name: :best_practice, content: 'Create 5 titles', description: nil, path: nil }) }
     end
 
-    it { is_expected.to include(best_practice: { name: :best_practice, content: 'Create 5 titles' }) }
+    context 'when prompt using block' do
+      subject { data[:prompts] }
+
+      before do
+        instance.prompt(:best_practice) do
+          content 'Create 5 titles'
+          description 'This is a best practice'
+        end
+      end
+
+      it { is_expected.to include(best_practice: { name: :best_practice, content: 'Create 5 titles', description: 'This is a best practice', path: nil }) }
+    end
+
+    context 'when using fluent interface' do
+      subject { data[:prompts] }
+
+      before do
+        instance.prompt(:best_practice).content('Create 5 titles').description('This is a best practice')
+      end
+
+      it { is_expected.to include(best_practice: { name: :best_practice, content: 'Create 5 titles', description: 'This is a best practice', path: nil }) }
+    end
   end
 
   context 'when prompt file is read' do
@@ -29,7 +54,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::PromptDsl do
     end
 
     it 'reads the content of the file' do
-      expect(instance.prompt_file('my_prompt.txt').strip).to eq('Create 5 titles')
+      expect(instance.load_file('my_prompt.txt').strip).to eq('Create 5 titles')
     end
   end
 end

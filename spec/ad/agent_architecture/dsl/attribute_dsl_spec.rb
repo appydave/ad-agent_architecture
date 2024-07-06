@@ -5,19 +5,49 @@ RSpec.describe Ad::AgentArchitecture::Dsl::AttributeDsl do
   let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
   let(:data) { workflow.data }
 
-  context 'when attributes are added to workflow' do
+  context 'when adding attribute to workflow' do
     subject { data[:attributes] }
 
-    before do
-      instance.attribute(:title, type: :string)
-      instance.attribute(:items, type: :string, is_array: true)
+    context 'when standard format' do
+      before do
+        instance.attribute(:title)
+        instance.attribute(:items, type: :something, is_array: true)
+      end
+
+      it 'includes the added attributes' do
+        expect(subject).to include(
+          title: { name: :title, type: :string, is_array: false, description: nil },
+          items: { name: :items, type: :something, is_array: true, description: nil }
+        )
+      end
     end
 
-    it 'includes the added attributes' do
-      expect(subject).to include(
-        title: { name: :title, type: :string, is_array: false },
-        items: { name: :items, type: :string, is_array: true }
-      )
+    context 'when attribute using block' do
+      before do
+        instance.attribute(:title) do
+          description 'This is a title'
+          type :something_else
+          is_array true
+        end
+      end
+
+      it 'includes the added attributes' do
+        expect(subject).to include(
+          title: { name: :title, type: :something_else, is_array: true, description: 'This is a title' }
+        )
+      end
+    end
+
+    context 'when using fluent interface' do
+      before do
+        instance.attribute(:title).description('This is a title').type(:something_else).is_array(true)
+      end
+
+      it 'includes the added attributes' do
+        expect(subject).to include(
+          title: { name: :title, type: :something_else, is_array: true, description: 'This is a title' }
+        )
+      end
     end
   end
 end

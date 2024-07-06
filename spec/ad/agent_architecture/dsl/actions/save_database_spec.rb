@@ -1,57 +1,37 @@
 # frozen_string_literal: true
 
-# require 'spec_helper'
-# require 'sequel'
-# require 'sqlite3'
-
 RSpec.describe Ad::AgentArchitecture::Dsl::Actions::SaveDatabase do
+  include_context 'with shared context'
+
   before do
     reset_database(DB)
   end
 
-  let(:workflow_hash) do
-    {
-      name: 'Test Workflow',
-      prompts: {
-        p1: { name: :p1, path: 'abc', content: 'abc' },
-        p2: { name: :p2, path: nil, content: 'abc' }
-      },
-      attributes: {
-        title: { name: :title, type: :string, is_array: false }
-      },
-      sections: [
-        {
-          name: 'Section 1',
-          order: 1,
-          steps: [
-            {
-              name: 'Step 1',
-              order: 1,
-              input_attributes: [:title],
-              output_attributes: [:title],
-              prompt: 'Test prompt'
-            }
-          ]
-        }
-      ]
-    }
-  end
-
-  let(:instance) { described_class.new(workflow_hash) }
+  let(:instance) { described_class.new(sample_dsl.workflow) }
 
   describe '#save' do
     it 'saves the workflow to the database' do
       expect { instance.save }.not_to raise_error
 
+      expect(instance.workflow_id).not_to be_nil
+
       # Verify workflow
       workflow = DB[:workflows].first
       expect(workflow[:name]).to eq('Test Workflow')
+      expect(workflow[:description]).to eq('Test description')
 
       # Verify attribute
       attribute = DB[:attributes].first
       expect(attribute[:name]).to eq('title')
       expect(attribute[:type]).to eq('string')
       expect(attribute[:is_array]).to be_falsey
+      expect(attribute[:description]).to eq('Title goes here')
+
+      # Verify setting
+      setting = DB[:settings].first
+      expect(setting[:name]).to eq('setting1')
+      expect(setting[:value]).to eq('value1')
+      expect(setting[:description]).to eq('setting1 description')
 
       # Verify prompt
       DB[:workflows].order(:id).limit(1, 1).first
@@ -64,11 +44,13 @@ RSpec.describe Ad::AgentArchitecture::Dsl::Actions::SaveDatabase do
       expect(prompts[1][:name]).to eq('p2')
       expect(prompts[1][:path]).to be_nil
       expect(prompts[1][:content]).to eq('abc')
+      expect(prompts[1][:description]).to eq('abc description')
 
       # Verify section
       section = DB[:sections].first
       expect(section[:name]).to eq('Section 1')
       expect(section[:order]).to eq(1)
+      expect(section[:description]).to eq('Section 1 description')
       expect(section[:workflow_id]).to eq(workflow[:id])
 
       # Verify step
@@ -76,6 +58,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::Actions::SaveDatabase do
       expect(step[:name]).to eq('Step 1')
       expect(step[:order]).to eq(1)
       expect(step[:prompt]).to eq('Test prompt')
+      expect(step[:description]).to eq('Step 1 description')
       expect(step[:section_id]).to eq(section[:id])
 
       # Verify input attribute

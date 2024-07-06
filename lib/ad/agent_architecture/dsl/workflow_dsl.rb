@@ -9,9 +9,14 @@ module Ad
 
         attr_reader :data
 
-        def initialize(name)
-          @data = { name: name, sections: [], attributes: {}, prompts: {}, settings: {} }
+        def initialize(name, description: nil)
+          @data = { name: name, description: description, sections: [], attributes: {}, prompts: {}, settings: {} }
           @current_section_order = 1
+        end
+
+        def description(description)
+          @data[:description] = description
+          self
         end
 
         def settings(&block)
@@ -32,8 +37,8 @@ module Ad
           dsl
         end
 
-        def section(name, &block)
-          dsl = SectionDsl.new(self, name, @current_section_order)
+        def section(name, description: nil, &block)
+          dsl = SectionDsl.new(self, name, @current_section_order, description: description)
           @current_section_order += 1
           dsl.instance_eval(&block) if block_given?
           dsl

@@ -12,7 +12,12 @@ KManager.action :project_plan do
 
         # Prompts need to support file read operation
 
-        todo(title: 'Prompt setter in step DSL will now lookup common prompts')
+        todo(title: 'Add saved workflow ID and save? to the DSL')
+        todo(title: 'Prompt set in step DSL will now lookup common prompts')
+        todo(title: 'Create tests for Agent Data Builder and hook up to save YAML/JSON')
+        todo(title: 'Settings need to persist in the settings or workflow table')
+        todo(title: 'Add add title name & description support to Agent Data Builder')
+        todo(title: 'Add fluent method access to all DSLs')
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 
@@ -20,6 +25,9 @@ KManager.action :project_plan do
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        # todo(title: 'Add hydrate DSL from saved workflow ID')
+        # todo(title: 'Add hydrate DSL from saved JSON')
+        # todo(title: 'Geneate DSL structure from saved YAML')
         todo(title: 'Visual graph of the workflow')
         todo(title: 'Horizontal')
         todo(title: 'Clicking on sections will show the steps in that section')

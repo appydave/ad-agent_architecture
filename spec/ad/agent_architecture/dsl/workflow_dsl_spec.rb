@@ -1,14 +1,27 @@
 # frozen_string_literal: true
 
 RSpec.describe Ad::AgentArchitecture::Dsl::WorkflowDsl do
-  let(:instance) { described_class.new(name) }
+  let(:instance) { described_class.new(name, description: description) }
 
   let(:name) { 'Blog Post Workflow' }
+  let(:description) { nil }
 
   context 'when workflow is instantiated' do
     subject { instance.data }
 
-    it { is_expected.to include(name: 'Blog Post Workflow', sections: [], attributes: {}, prompts: {}, settings: {}) }
+    it { is_expected.to include(name: 'Blog Post Workflow', description: nil, sections: [], attributes: {}, prompts: {}, settings: {}) }
+
+    context 'when description is set via constructor' do
+      let(:description) { 'This is a workflow for creating a blog post' }
+
+      it { is_expected.to include(name: 'Blog Post Workflow', description: 'This is a workflow for creating a blog post', sections: [], attributes: {}, prompts: {}, settings: {}) }
+    end
+
+    context 'when description is set via method' do
+      before { instance.description('New description') }
+
+      it { is_expected.to include(name: 'Blog Post Workflow', description: 'New description', sections: [], attributes: {}, prompts: {}, settings: {}) }
+    end
   end
 
   context 'when attributes are added to workflow' do
@@ -24,9 +37,9 @@ RSpec.describe Ad::AgentArchitecture::Dsl::WorkflowDsl do
 
     it {
       expect(subject).to include(
-        transcript: { name: :transcript, type: :string, is_array: false },
-        outline: { name: :outline, type: :string, is_array: false },
-        keywords: { name: :keywords, type: :string, is_array: true }
+        transcript: { name: :transcript, type: :string, is_array: false, description: nil },
+        outline: { name: :outline, type: :string, is_array: false, description: nil },
+        keywords: { name: :keywords, type: :string, is_array: true, description: nil }
       )
     }
   end
@@ -40,7 +53,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::WorkflowDsl do
       end
     end
 
-    it { is_expected.to include(transcript: { content: 'Enter the transcript of the blog post.', name: :transcript }) }
+    it { is_expected.to include(transcript: { content: 'Enter the transcript of the blog post.', name: :transcript, description: nil, path: nil }) }
   end
 
   context 'when settings are added to workflow' do
@@ -52,6 +65,6 @@ RSpec.describe Ad::AgentArchitecture::Dsl::WorkflowDsl do
       end
     end
 
-    it { is_expected.to include(path_to_prompts: '/path/to/prompts') }
+    it { is_expected.to include(path_to_prompts: { value: '/path/to/prompts', description: nil }) }
   end
 end

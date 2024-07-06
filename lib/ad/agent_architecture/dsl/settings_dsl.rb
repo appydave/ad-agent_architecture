@@ -5,9 +5,9 @@ module Ad
     module Dsl
       # This class is responsible for defining the settings of a workflow
       class SettingsDsl < ChildDsl
-        def method_missing(name, *args, &block)
+        def method_missing(name, *args, **kwargs, &block)
           if args.length == 1 && block.nil?
-            data[:settings][name] = args.first
+            data[:settings][name] = { value: args.first, description: kwargs[:description] }
           else
             super
           end

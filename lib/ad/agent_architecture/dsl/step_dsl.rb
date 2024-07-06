@@ -10,11 +10,12 @@ module Ad
         attr_reader :section
         attr_reader :step
 
-        def initialize(workflow, section, name, order)
+        def initialize(workflow, section, name, order, description: nil)
           super(workflow)
           @step = {
             name: name,
             order: order,
+            description: description,
             prompt: '',
             input_attributes: [],
             output_attributes: []
@@ -37,9 +38,13 @@ module Ad
         end
 
         def prompt(prompt, **_opts)
-          lookup_prompt = get_prompt_content(prompt)
+          content = prompt_content(prompt)
+          @step[:prompt] = content || prompt
+          self
+        end
 
-          @step[:prompt] = lookup_prompt || prompt
+        def description(description)
+          @step[:description] = description
           self
         end
 

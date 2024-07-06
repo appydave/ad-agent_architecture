@@ -39,6 +39,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   # spec.extensions    = ['ext/ad_agent_architecture/extconf.rb']
 
+  spec.add_dependency 'cmdlet'
   spec.add_dependency 'k_log', '~> 0'
   spec.add_dependency 'sequel', '~> 5'
   spec.add_dependency 'sqlite3', '~> 2'

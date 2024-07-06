@@ -27,14 +27,14 @@ module Ad
           db.create_table :workflows do
             primary_key :id
             String :name, null: false
-            String :description
+            String :description, null: true
           end
 
           db.create_table :sections do
             primary_key :id
             foreign_key :workflow_id, :workflows
             String :name, null: false
-            String :description
+            String :description, null: true
             Integer :order
           end
 
@@ -43,7 +43,7 @@ module Ad
             foreign_key :section_id, :sections
             String :name, null: false
             String :action, default: 'gpt'
-            String :description
+            String :description, null: true
             Integer :order
             String :prompt
           end
@@ -52,6 +52,7 @@ module Ad
             primary_key :id
             foreign_key :workflow_id, :workflows
             String :name, null: false
+            String :description, null: true
             String :type
             Boolean :is_array
           end
@@ -74,6 +75,15 @@ module Ad
             String :name, null: false
             String :path, null: true
             String :content, null: true
+            String :description, null: true
+            foreign_key :workflow_id, :workflows
+          end
+
+          db.create_table :settings do
+            primary_key :id
+            String :name, null: false
+            String :value
+            String :description, null: true
             foreign_key :workflow_id, :workflows
           end
 

@@ -7,8 +7,10 @@ require 'simplecov'
 SimpleCov.start
 
 require 'ad/agent_architecture'
+require 'support/shared_contexts'
 
 def reset_database(db)
+  db.drop_table?(:settings)
   db.drop_table?(:attribute_values)
   db.drop_table?(:step_runs)
   db.drop_table?(:section_runs)

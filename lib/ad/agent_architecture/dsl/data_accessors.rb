@@ -17,6 +17,11 @@ module Ad
           settings[name.to_sym] || settings[name.to_s]
         end
 
+        def setting_value(name, default: nil)
+          lookup = get_setting(name)
+          lookup ? lookup[:value] : default
+        end
+
         def attributes
           data[:attributes]
         end
@@ -33,9 +38,9 @@ module Ad
           prompts[name.to_sym] || prompts[name.to_s]
         end
 
-        def get_prompt_content(name)
+        def prompt_content(name, default: nil)
           lookup = get_prompt(name)
-          lookup ? lookup[:content] : nil
+          lookup ? lookup[:content] : default
         end
       end
     end

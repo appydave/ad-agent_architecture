@@ -10,9 +10,12 @@ RSpec.describe Ad::AgentArchitecture::Dsl::SettingsDsl do
 
     before do
       instance.some_path('/path/to/prompts')
-      instance.name('AppyDave')
+      instance.name('AppyDave', description: 'AppyDave description')
     end
 
-    it { is_expected.to include(some_path: '/path/to/prompts', name: 'AppyDave') }
+    it 'includes the settings with values and descriptions' do
+      expect(data[:settings][:some_path]).to include(value: '/path/to/prompts', description: nil)
+      expect(data[:settings][:name]).to include(value: 'AppyDave', description: 'AppyDave description')
+    end
   end
 end

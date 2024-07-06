@@ -11,6 +11,7 @@ module Ad
         one_to_many :attributes, class: 'Ad::AgentArchitecture::Database::Attribute'
         one_to_many :workflow_runs, class: 'Ad::AgentArchitecture::Database::WorkflowRun'
         one_to_many :prompts, class: 'Ad::AgentArchitecture::Database::Prompt'
+        one_to_many :settings, class: 'Ad::AgentArchitecture::Database::Setting'
       end
 
       # Section model represents a section entity in the database.
@@ -47,7 +48,13 @@ module Ad
         many_to_one :attribute, class: 'Ad::AgentArchitecture::Database::Attribute'
       end
 
+      # Prompt model represents a prompt entity in the database.
       class Prompt < Sequel::Model
+        many_to_one :workflow, class: 'Ad::AgentArchitecture::Database::Workflow'
+      end
+
+      # Setting model represents a setting entity in the database.
+      class Setting < Sequel::Model
         many_to_one :workflow, class: 'Ad::AgentArchitecture::Database::Workflow'
       end
 

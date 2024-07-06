@@ -1,14 +1,17 @@
-dsl = Agent.create('YouTube Script Writer') do
+start_time = Time.now
+dsl = Agent.create(:youtube_script_writer) do
+  description 'This workflow is used to write a script for a YouTube video.'
   settings do
     prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/youtube/script_writer')
+    default_llm :gpt4o
   end
 
   prompts do
-    prompt :working_idea          , content: prompt_file("01-1-working-idea.txt")
-    prompt :basic_factsheet       , content: prompt_file("01-2-basic-factsheet.txt")
-    prompt :video_ideas           , content: prompt_file("01-3-video-ideas.txt")
-    prompt :expanded_factsheet    , content: prompt_file("01-4-expanded-factsheet.txt")
-    prompt :meta_data             , content: prompt_file("01-5-meta-data.txt")
+    prompt :working_idea          , content: load_file("01-1-working-idea.txt")
+    prompt :basic_factsheet       , content: load_file("01-2-basic-factsheet.txt")
+    prompt :video_ideas           , content: load_file("01-3-video-ideas.txt")
+    prompt :expanded_factsheet    , content: load_file("01-4-expanded-factsheet.txt")
+    prompt :meta_data             , content: load_file("01-5-meta-data.txt")
   end
 
   attributes do
@@ -22,6 +25,21 @@ dsl = Agent.create('YouTube Script Writer') do
     attribute :meta_keywords, type: :array
     attribute :meta_topics, type: :array
     attribute :script, type: :string
+  end
+
+  section('Introduction') do
+    step('Introduction') do
+      input :working_idea
+      prompt :working_idea
+      output :keep_for_futre
+    end
+
+    step('Fact check') do
+      # llm :openai_critic
+      input :keep_for_futre
+      prompt :expanded_factsheet
+      output :validated
+    end
   end
 
   section('Research') do
@@ -80,12 +98,28 @@ dsl = Agent.create('YouTube Script Writer') do
   end
 end
 
+file1_local = '/Users/davidcruwys/dev/kgems/ad-agent_architecture/a1.json'
+file1 = '/Users/davidcruwys/dev/sites/working-with-sean/gpt-agents/src/content/gpt-workflows/youtube-script-writer.json'
 dsl
   .save
-  .save_json('/Users/davidcruwys/dev/sites/working-with-sean/gpt-agents/src/content/gpt-workflows/youtube-script-writer.json')
-  
-workflow = Ad::AgentArchitecture::Database::Workflow.first(name: 'YouTube Script Writer')
+  .save_json(file1_local)
+  .save_json(file1)
 
-# Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(workflow)
-Ad::AgentArchitecture::Report::WorkflowListReport.new.print
-# Ad::AgentArchitecture::Report::DslGenerator.new(dsl.workflow, clipboard: true, display: false).dsl_for_attributes
+last_workflow = Ad::AgentArchitecture::Database::Workflow.order(Sequel.desc(:id)).first
+
+data = Ad::AgentArchitecture::Report::AgentDataBuilder.new(last_workflow.id).build
+
+# # puts JSON.pretty_generate(data)
+
+file2_local = '/Users/davidcruwys/dev/kgems/ad-agent_architecture/a2.json'
+file2 = '/Users/davidcruwys/dev/sites/working-with-sean/gpt-agents/src/content/gpt-workflows/youtube-script-writer.json'
+File.write(file2_local, JSON.pretty_generate(data))
+File.write(file2, JSON.pretty_generate(data))
+
+
+# # Ad::AgentArchitecture::Report::WorkflowDetailReport.new.print(last_workflow)
+# # Ad::AgentArchitecture::Report::WorkflowListReport.new.print
+# # Ad::AgentArchitecture::Report::DslGenerator.new(dsl.workflow, clipboard: true, display: false).dsl_for_attributes
+
+# # Print time taken in seconds
+puts "Time taken: #{Time.now - start_time} seconds"

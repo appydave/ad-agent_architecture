@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
-  let(:instance) { described_class.new(workflow, section, name, order) }
+  let(:instance) { described_class.new(workflow, section, name, order, description: description) }
   let(:workflow) { Ad::AgentArchitecture::Dsl::WorkflowDsl.new('Name') }
   let(:data) { workflow.data }
 
@@ -9,6 +9,7 @@ RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
   let(:steps) { section[:steps] }
   let(:name) { 'Generate Outline' }
   let(:order) { 1 }
+  let(:description) { nil }
 
   before do
     workflow.section('Section Name')
@@ -20,7 +21,19 @@ RSpec.describe Ad::AgentArchitecture::Dsl::StepDsl do
 
       before { instance }
 
-      it { is_expected.to include(name: 'Generate Outline', order: 1, input_attributes: [], output_attributes: [], prompt: '') }
+      it { is_expected.to include(name: 'Generate Outline', order: 1, input_attributes: [], output_attributes: [], prompt: '', description: nil) }
+
+      context 'when description is provided' do
+        let(:description) { 'This is a description' }
+
+        it { is_expected.to include(description: 'This is a description') }
+      end
+
+      context 'when description is provided using method' do
+        before { instance.description('This is a description') }
+
+        it { is_expected.to include(description: 'This is a description') }
+      end
     end
 
     context 'when input is added to step' do

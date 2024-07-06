@@ -1,5 +1,11 @@
 # AppyDave - Agent Architecture Schema
 
+GPT: 
+https://chatgpt.com/c/d938fd7c-28d4-4543-9246-eae6676d8aa5
+https://chatgpt.com/c/e7b66d48-4134-4573-b5c6-54988e5f008c
+https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20
+
+
 ## Purpose
 
 The application is designed to handle structured workflows for building documents or text-based assets using LLMs from OpenAi, Anthropic and others. It should be adaptable to any workflow that follows a structured concept or a series of steps.

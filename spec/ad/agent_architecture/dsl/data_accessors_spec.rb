@@ -7,7 +7,7 @@ require 'ad/agent_architecture/dsl/data_accessors'
 RSpec.describe Ad::AgentArchitecture::Dsl::DataAccessors do
   let(:workflow_data) do
     {
-      settings: { test_setting: 'value' },
+      settings: { test_setting: { name: :test_setting, value: 'value', description: 'some description' } },
       attributes: { test_attribute: { name: :test_attribute, type: :string } },
       prompts: { test_prompt: { name: :test_prompt, content: 'content' } },
       sections: []
@@ -36,7 +36,21 @@ RSpec.describe Ad::AgentArchitecture::Dsl::DataAccessors do
 
   describe '#get_setting' do
     it 'retrieves a setting by name' do
-      expect(workflow.get_setting(:test_setting)).to eq('value')
+      expect(workflow.get_setting(:test_setting)).to include(name: :test_setting, value: 'value', description: 'some description')
+    end
+  end
+
+  describe '#setting_value' do
+    it 'retrieves a setting value by name' do
+      expect(workflow.setting_value(:test_setting)).to eq('value')
+    end
+
+    it 'returns nil if the setting does not exist' do
+      expect(workflow.setting_value(:non_existent_setting)).to be_nil
+    end
+
+    it 'returns the default value if the setting does not exist' do
+      expect(workflow.setting_value(:non_existent_setting, default: 'default')).to eq('default')
     end
   end
 
@@ -64,9 +78,17 @@ RSpec.describe Ad::AgentArchitecture::Dsl::DataAccessors do
     end
   end
 
-  describe '#get_prompt_content' do
+  describe '#prompt_content' do
     it 'retrieves a prompt content by name' do
-      expect(workflow.get_prompt_content(:test_prompt)).to eq('content')
+      expect(workflow.prompt_content(:test_prompt)).to eq('content')
+    end
+
+    it 'returns nil if the prompt does not exist' do
+      expect(workflow.prompt_content(:non_existent_prompt)).to be_nil
+    end
+
+    it 'returns the default value if the prompt does not exist' do
+      expect(workflow.prompt_content(:non_existent_prompt, default: 'default')).to eq('default')
     end
   end
 

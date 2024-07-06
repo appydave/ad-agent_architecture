@@ -6,17 +6,22 @@ module Ad
       # This class is responsible for defining the agent DSL
       class AgentDsl
         attr_reader :workflow
+        attr_accessor :workflow_id
 
-        def self.create(name, &block)
-          new(name).tap do |dsl|
+        def self.create(name, description: nil, &block)
+          new(name, description: description).tap do |dsl|
             dsl.instance_eval(&block) if block_given?
           end
         end
 
-        def initialize(name)
+        def description(description)
+          @workflow.description(description)
+        end
+
+        def initialize(name, description: nil)
           raise ArgumentError, 'Agent name must be a string or symbol' unless name.is_a?(String) || name.is_a?(Symbol)
 
-          @workflow = WorkflowDsl.new(name)
+          @workflow = WorkflowDsl.new(name, description: description)
         end
 
         def settings(&block)
@@ -31,28 +36,33 @@ module Ad
           @workflow.prompts(&block)
         end
 
-        def section(name, &block)
+        def section(name, description: nil, &block)
           raise ArgumentError, 'Section name must be a string or symbol' unless name.is_a?(String) || name.is_a?(Symbol)
 
-          @workflow.section(name, &block)
+          @workflow.section(name, description: description, &block)
         end
 
         def save
-          Ad::AgentArchitecture::Dsl::Actions::SaveDatabase.new(@workflow.data).save
+          id = Ad::AgentArchitecture::Dsl::Actions::SaveDatabase.new(@workflow).save
+          @workflow_id = id
 
           self
         end
 
         def save_json(file_name = nil)
           full_file_name = file_name || 'workflow.json'
-          Ad::AgentArchitecture::Dsl::Actions::SaveJson.new(@workflow.data).save(full_file_name)
+          raise ArgumentError, 'Workflow needs to be saved, befor you can save JSON' unless @workflow_id
+
+          Ad::AgentArchitecture::Dsl::Actions::SaveJson.new(@workflow_id).save(full_file_name)
 
           self
         end
 
         def save_yaml(file_name = nil)
           full_file_name = file_name || 'workflow.yaml'
-          Ad::AgentArchitecture::Dsl::Actions::SaveYaml.new(@workflow.data).save(full_file_name)
+          raise ArgumentError, 'Workflow needs to be saved, befor you can save YAML' unless @workflow_id
+
+          Ad::AgentArchitecture::Dsl::Actions::SaveYaml.new(@workflow_id).save(full_file_name)
 
           self
         end

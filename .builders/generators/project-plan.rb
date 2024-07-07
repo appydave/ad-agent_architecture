@@ -12,6 +12,9 @@ KManager.action :project_plan do
 
         # Prompts need to support file read operation
 
+        todo(title: 'Fix Alpine Javascript Issues')
+        todo(title: 'Add dynamic menu support for attributes, prompts, settings and section menus')
+
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 

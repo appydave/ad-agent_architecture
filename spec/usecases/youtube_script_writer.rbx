@@ -27,30 +27,21 @@ dsl = Agent.create(:youtube_script_writer) do
     attribute :script, type: :string
   end
 
-  section('Introduction') do
-    step('Introduction') do
-      input :working_idea
-      prompt :working_idea
-      output :keep_for_futre
-    end
-
-    step('Fact check') do
-      # llm :openai_critic
-      input :keep_for_futre
-      prompt :expanded_factsheet
-      output :validated
-    end
-  end
-
   section('Research') do
     step('Basic Idea') do
-      input :best_idea
+      input :idea
       prompt :working_idea
       output :ideas
     end
 
+    step('Select an Idea') do
+      input :ideas
+      # action 'Select the best idea from the list.'
+      output :selected_idea
+    end
+
     step('Basic Factsheet') do
-      input :idea
+      input :selected_idea
       prompt :basic_factsheet
       output :basic_factsheet
     end

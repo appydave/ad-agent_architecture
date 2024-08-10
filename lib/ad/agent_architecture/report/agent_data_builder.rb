@@ -56,7 +56,8 @@ module Ad
               description: step.description,
               prompt: step.prompt,
               input_attributes: fetch_input_attributes(step.id),
-              output_attributes: fetch_output_attributes(step.id)
+              output_attributes: fetch_output_attributes(step.id),
+              language_models: [data.dig(:settings, :default_llm, :value) || 'gpt4o']
             }
           end
         end

@@ -51,18 +51,22 @@ module Ad
 
         def save_json(file_name = nil)
           full_file_name = file_name || 'workflow.json'
-          raise ArgumentError, 'Workflow needs to be saved, befor you can save JSON' unless @workflow_id
+          raise ArgumentError, 'Workflow needs to be saved, befor you can save JSON' unless workflow_id
 
-          Ad::AgentArchitecture::Dsl::Actions::SaveJson.new(@workflow_id).save(full_file_name)
+          data = Ad::AgentArchitecture::Report::AgentDataBuilder.new(workflow_id).build
+
+          Ad::AgentArchitecture::Dsl::Actions::SaveJson.new(data).save(full_file_name)
 
           self
         end
 
         def save_yaml(file_name = nil)
           full_file_name = file_name || 'workflow.yaml'
-          raise ArgumentError, 'Workflow needs to be saved, befor you can save YAML' unless @workflow_id
+          raise ArgumentError, 'Workflow needs to be saved, befor you can save YAML' unless workflow_id
 
-          Ad::AgentArchitecture::Dsl::Actions::SaveYaml.new(@workflow_id).save(full_file_name)
+          data = Ad::AgentArchitecture::Report::AgentDataBuilder.new(workflow_id).build
+
+          Ad::AgentArchitecture::Dsl::Actions::SaveYaml.new(data).save(full_file_name)
 
           self
         end

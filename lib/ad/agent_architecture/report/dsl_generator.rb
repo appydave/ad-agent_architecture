@@ -12,6 +12,7 @@ module Ad
 
         def initialize(workflow, display: true, clipboard: false)
           @workflow_hash = workflow if workflow.is_a?(Hash)
+          # REFACTOR: There is no property workflow in the class Ad::AgentArchitecture::Dsl::WorkflowDsl
           @workflow_hash = workflow.workflow if workflow.is_a?(Ad::AgentArchitecture::Dsl::WorkflowDsl)
 
           @display = display

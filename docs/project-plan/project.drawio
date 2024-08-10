@@ -1,105 +1,159 @@
-<mxfile host="3jg">
-  <diagram id="C4t" name="In progress">
+<mxfile host="6SP">
+  <diagram id="JqO" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_C4t" parent="C4t"/>
-        <mxCell id="node_root_C4t" parent="page_root_C4t"/>
-        <mxCell id="C4t-2" value="Fix Alpine Javascript Issues" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_C4t">
+        <mxCell id="page_root_JqO" parent="JqO"/>
+        <mxCell id="node_root_JqO" parent="page_root_JqO"/>
+        <mxCell id="JqO-2" value="Migrate from alpine to svelte, vue or react" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_JqO">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="C4t-3" value="Add dynamic menu support for attributes, prompts, settings and section menus" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_C4t">
+        <mxCell id="JqO-3" value="" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_JqO">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="JqO-4" value="" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_JqO">
+          <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="JqO-5" value="" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_JqO">
+          <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="JqO-6" value="" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_JqO">
+          <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="uuM" name="To Do">
+  <diagram id="XRw" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_uuM" parent="uuM"/>
-        <mxCell id="node_root_uuM" parent="page_root_uuM"/>
-        <mxCell id="uuM-2" value="Visual graph of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="page_root_XRw" parent="XRw"/>
+        <mxCell id="node_root_XRw" parent="page_root_XRw"/>
+        <mxCell id="XRw-2" value="SSR/SSG/CLIENT HIBRID" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-3" value="Clicking on sections will show the steps in that section" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-3" value="Local Tunnel Integration: https://www.youtube.com/watch?v=D5ArCEjV0gU" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-4" value="Clicking on attributes will show all attributes in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-4" value="Turn into mobile phone app: https://www.youtube.com/watch?v=ZFNwTJiDEvU" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-5" value="Clicking on prompts will show all prompts in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-5" value="Excalabr and TLDraw Integration" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-6" value="Clicking on dashboard will show visual hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-6" value="Add side draw or modal to see the final prompt" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-7" value="Need a runs button" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-7" value="Add copy to clipboard button to the final prompt" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-8" value="VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-8" value="Add copy to clipboard button to input attribute name as placeholder" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="10" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-9" value="Report: Simple hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-9" value="Visual graph of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="330" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-10" value="Generator: Agent Framework CrewAI" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-10" value="Visual steps of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="650" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-11" value="Generator: Agent Framework Langchain" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-11" value="Add select action or custom action to any steps" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="10" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-12" value="Generator: Agent Framework Rasa" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-12" value="Add output window for LLM run" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="330" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-13" value="Generator: Agent Framework Botpress" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-13" value="Clicking on sections will show the steps in that section" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="650" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-14" value="Generator: Agent Framework Dialogflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-14" value="Clicking on attributes will show all attributes in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="10" y="330" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="uuM-15" value="Generator: Agent Framework Microsoft Bot Framework" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_uuM">
+        <mxCell id="XRw-15" value="Clicking on prompts will show all prompts in the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
           <mxGeometry x="330" y="330" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-16" value="Clicking on dashboard will show visual hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="650" y="330" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-17" value="Need a runs button" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="10" y="410" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-18" value="VCode Editor: https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="330" y="410" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-19" value="Report: Simple hierarchy of the workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="650" y="410" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-20" value="Connect to LLM" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="10" y="490" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-21" value="Connect to Elevenlabs or other TTS" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="330" y="490" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-22" value="Export: Mindmap" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="650" y="490" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-23" value="Export: Agent Framework CrewAI" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="10" y="570" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-24" value="Export: Agent Framework Langchain" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="330" y="570" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-25" value="Export: Agent Framework Rasa" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="650" y="570" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-26" value="Export: Agent Framework Botpress" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="10" y="650" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-27" value="Export: Agent Framework Dialogflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="330" y="650" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="XRw-28" value="Export: Agent Framework Microsoft Bot Framework" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_XRw">
+          <mxGeometry x="650" y="650" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="Tjn" name="Done">
+  <diagram id="lUU" name="Done">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_Tjn" parent="Tjn"/>
-        <mxCell id="node_root_Tjn" parent="page_root_Tjn"/>
-        <mxCell id="Tjn-2" value="Steps display horizontally" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="page_root_lUU" parent="lUU"/>
+        <mxCell id="node_root_lUU" parent="page_root_lUU"/>
+        <mxCell id="lUU-2" value="Add dynamic menu support for attributes, prompts, settings and section menus" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-3" value="Add saved workflow ID and save? to the DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-3" value="Fix Alpine Javascript Issues" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-4" value="Prompt set in step DSL will now lookup common prompts" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-4" value="Steps display horizontally" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-5" value="Create tests for Agent Data Builder and hook up to save YAML/JSON" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-5" value="Add saved workflow ID and save? to the DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-6" value="Settings need to persist in the settings or workflow table" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-6" value="Prompt set in step DSL will now lookup common prompts" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-7" value="Add add title name &amp; description support to Agent Data Builder" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-7" value="Create tests for Agent Data Builder and hook up to save YAML/JSON" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="650" y="90" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-8" value="Add fluent method access to all DSLs" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-8" value="Settings need to persist in the settings or workflow table" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="10" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-9" value="Generate DSL for an Agent Architecture workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-9" value="Add add title name &amp; description support to Agent Data Builder" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="330" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-10" value="Attributes are auto created when used in a step, but not preconfigured" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-10" value="Add fluent method access to all DSLs" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="650" y="170" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-11" value="Add support for project plan" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-11" value="Generate DSL for an Agent Architecture workflow" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="10" y="250" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="Tjn-12" value="Fix the DB issue introduced via DSL refactor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_Tjn">
+        <mxCell id="lUU-12" value="Attributes are auto created when used in a step, but not preconfigured" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
           <mxGeometry x="330" y="250" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lUU-13" value="Add support for project plan" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
+          <mxGeometry x="650" y="250" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lUU-14" value="Fix the DB issue introduced via DSL refactor" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_lUU">
+          <mxGeometry x="10" y="330" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

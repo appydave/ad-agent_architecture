@@ -1,4 +1,5 @@
 start_time = Time.now
+
 dsl = Agent.create(:youtube_script_writer) do
   description 'This workflow is used to write a script for a YouTube video.'
   settings do
@@ -17,6 +18,7 @@ dsl = Agent.create(:youtube_script_writer) do
   attributes do
     attribute :idea, type: :string
     attribute :ideas, type: :array
+    attribute :selected_idea, type: :string
     attribute :basic_factsheet, type: :string
     attribute :video_ideas, type: :array
     attribute :video_idea, type: :string
@@ -26,6 +28,20 @@ dsl = Agent.create(:youtube_script_writer) do
     attribute :meta_topics, type: :array
     attribute :script, type: :string
   end
+
+  # section('Thumbnail') do
+  #   step('Thumbnail Text Research') do
+  #     input :thumb_text_idea
+  #     prompt :working_idea
+  #     output :thumb_text
+  #   end
+
+  #   step('Create Thumbnail') do
+  #     input :thumb_text
+  #     prompt :working_idea
+  #     output :thumbnail
+  #   end
+  # end
 
   section('Research') do
     step('Basic Idea') do
@@ -99,7 +115,6 @@ dsl
 last_workflow = Ad::AgentArchitecture::Database::Workflow.order(Sequel.desc(:id)).first
 
 data = Ad::AgentArchitecture::Report::AgentDataBuilder.new(last_workflow.id).build
-
 # # puts JSON.pretty_generate(data)
 
 file2_local = '/Users/davidcruwys/dev/kgems/ad-agent_architecture/a2.json'

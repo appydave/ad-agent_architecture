@@ -31,12 +31,19 @@ module Ad
           self
         end
 
-        def load_file(file)
+        def load_file(file, **opts)
           prompt_path = settings[:prompt_path]
+
           raise 'Prompt path not defined in settings. Set "prompt_path" to the path where you are keping prompts' unless prompt_path
 
           full_path = File.join(prompt_path[:value], file)
+          create_folder_file_if_not_exist(full_path)
           File.read(full_path)
+        end
+
+        def create_folder_file_if_not_exist(file)
+          FileUtils.mkdir_p(File.dirname(file))
+          File.write(file, '') unless File.exist?(file)
         end
       end
     end

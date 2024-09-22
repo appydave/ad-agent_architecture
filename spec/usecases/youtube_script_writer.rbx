@@ -1,10 +1,10 @@
 start_time = Time.now
 
 dsl = Agent.create(:youtube_script_writer) do
-  description 'This workflow is used to write a script for a YouTube video.'
+  description 'AppyDave This workflow is used to write a script for a YouTube video.'
   settings do
     prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/youtube/script_writer')
-    default_llm :gpt4o
+    default_llm :claude
   end
 
   prompts do
@@ -29,21 +29,7 @@ dsl = Agent.create(:youtube_script_writer) do
     attribute :script, type: :string
   end
 
-  # section('Thumbnail') do
-  #   step('Thumbnail Text Research') do
-  #     input :thumb_text_idea
-  #     prompt :working_idea
-  #     output :thumb_text
-  #   end
-
-  #   step('Create Thumbnail') do
-  #     input :thumb_text
-  #     prompt :working_idea
-  #     output :thumbnail
-  #   end
-  # end
-
-  section('Research') do
+  section('Research and Development') do
     step('Basic Idea') do
       input :idea
       prompt :working_idea

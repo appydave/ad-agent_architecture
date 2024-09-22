@@ -1,8 +1,9 @@
 # AppyDave - Agent Architecture Schema
 
 GPT: 
+GPT Agent Analysis/Astro        : https://chatgpt.com/c/e7b66d48-4134-4573-b5c6-54988e5f008c
+
 https://chatgpt.com/c/d938fd7c-28d4-4543-9246-eae6676d8aa5
-https://chatgpt.com/c/e7b66d48-4134-4573-b5c6-54988e5f008c
 https://chatgpt.com/c/e09e1367-db5e-4786-b362-db35805b1e20
 
 
@@ -90,7 +91,7 @@ This table stores the basic information about each workflow, including its uniqu
 
 | Field       | Type   | Description                         |
 |-------------|--------|-------------------------------------|
-| id          | string | Unique identifier for the workflow  |
+| id          | integer| Unique identifier for the workflow  |
 | name        | string | The name of the workflow            |
 | description | string | A brief description of the workflow |
 
@@ -100,7 +101,7 @@ This table stores the sections that belong to a workflow. Each section has an or
 | Field       | Type    | Description                            |
 |-------------|---------|----------------------------------------|
 | id          | string  | Unique identifier for the section      |
-| workflow_id | string  | Foreign key referencing workflows      |
+| workflow_id | integer | Foreign key referencing workflows      |
 | name        | string  | The name of the section                |
 | description | string  | A brief description of the section     |
 | order       | integer | The order of the section in the workflow|
@@ -113,8 +114,8 @@ Example workflows include "YouTube Video Script", "YouTube Title Creator" and "Y
 
 | Field       | Type    | Description                         |
 |-------------|---------|-------------------------------------|
-| id          | string  | Unique identifier for the step      |
-| section_id  | string  | Foreign key referencing sections    |
+| id          | integer | Unique identifier for the step      |
+| section_id  | integer | Foreign key referencing sections    |
 | name        | string  | The name of the step                |
 | action      | string  | The action to be performed by the step, default ('gpt') |
 | description | string  | A brief description of the step     |
@@ -129,8 +130,8 @@ Example attributes include "simple_title", "basic_factsheet" and "working_title"
 
 | Field       | Type    | Description                                 |
 |-------------|---------|---------------------------------------------|
-| id          | string  | Unique identifier for the attribute         |
-| workflow_id | string  | Foreign key referencing workflows           |
+| id          | integer | Unique identifier for the attribute         |
+| workflow_id | integer | Foreign key referencing workflows           |
 | name        | string  | The name of the attribute                   |
 | type        | string  | The type of the attribute (e.g., string)    |
 | is_array    | boolean | Indicates whether the attribute is an array |
@@ -141,7 +142,7 @@ This table maps input attributes to steps. This becomes the input parameters for
 
 | Field       | Type    | Description                        |
 |-------------|---------|------------------------------------|
-| step_id     | string  | Foreign key referencing steps      |
+| step_id     | integer | Foreign key referencing steps      |
 | attribute_id| string  | Foreign key referencing attributes |
 | required    | boolean | Indicates whether the attribute is required |
 
@@ -151,7 +152,7 @@ This table maps output attributes to steps. This becomes a result of the AI agen
 
 | Field       | Type    | Description                        |
 |-------------|---------|------------------------------------|
-| step_id     | string  | Foreign key referencing steps      |
+| step_id     | integer | Foreign key referencing steps      |
 | attribute_id| string  | Foreign key referencing attributes |
 
 ### Dynamic Workflow Execution
@@ -166,26 +167,26 @@ This table stores instances of workflow executions.
 
 | Field       | Type   | Description                           |
 |-------------|--------|---------------------------------------|
-| id          | string | Unique identifier for the workflow run|
-| workflow_id | string | Foreign key referencing workflows     |
+| id          | integer | Unique identifier for the workflow run|
+| workflow_id | integer| Foreign key referencing workflows     |
 
 #### Table: section_runs
 This table stores instances of section executions within a workflow run.
 
 | Field           | Type   | Description                            |
 |-----------------|--------|----------------------------------------|
-| id              | string | Unique identifier for the section run  |
-| section_id      | string | Foreign key referencing sections       |
-| workflow_run_id | string | Foreign key referencing workflow_runs  |
+| id              | integer | Unique identifier for the section run  |
+| section_id      | integer | Foreign key referencing sections       |
+| workflow_run_id | integer | Foreign key referencing workflow_runs  |
 
 #### Table: step_runs
 This table stores instances of step executions within a section run. Each step run can have multiple branches.
 
 | Field            | Type    | Description                                                         |
 |------------------|---------|---------------------------------------------------------------------|
-| id               | string  | Unique identifier for the step run                                  |
-| section_run_id   | string  | Foreign key referencing section_runs                                |
-| step_id          | string  | Foreign key referencing steps                                       |
+| id               | integer  | Unique identifier for the step run                                  |
+| section_run_id   | integer  | Foreign key referencing section_runs                                |
+| step_id          | integer  | Foreign key referencing steps                                       |
 | branch_number    | integer | Branch number to distinguish different instances (branches) of the same step |
 
 #### Table: attribute_values
@@ -193,9 +194,9 @@ This table stores the values of attributes during step executions.
 
 | Field         | Type   | Description                             |
 |---------------|--------|-----------------------------------------|
-| id            | string | Unique identifier for the attribute value|
-| attribute_id  | string | Foreign key referencing attributes      |
-| step_run_id   | string | Foreign key referencing step_runs       |
+| id            | integer | Unique identifier for the attribute value|
+| attribute_id  | integer | Foreign key referencing attributes      |
+| step_run_id   | integer | Foreign key referencing step_runs       |
 | value         | text   | The actual value of the attribute during the step execution |
 
 ## Gemfile

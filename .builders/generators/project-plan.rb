@@ -13,10 +13,6 @@ KManager.action :project_plan do
         # Prompts need to support file read operation
 
         todo(title: 'Migrate from alpine to svelte, vue or react')
-        todo(title: '')
-        todo(title: '')
-        todo(title: '')
-        todo(title: '')
         
         # todo(title: '')
       end

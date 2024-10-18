@@ -1,7 +1,7 @@
 start_time = Time.now
 
 dsl = Agent.create(:youtube_script_writer) do
-  description 'AppyDave This workflow is used to write a script for a YouTube video.'
+  description 'AppyDave This workflow is used to write a script for a YouTube video for AI-TLDR.'
   settings do
     prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/youtube/script_writer')
     default_llm :claude

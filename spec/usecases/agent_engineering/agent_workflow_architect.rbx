@@ -3,7 +3,7 @@ start_time = Time.now
 dsl = Agent.create(:agent_workflow_architect) do
   description 'This workflow will help build new agent workflows'
   settings do
-    prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/agent_workflow_architect')
+    prompt_path Ad::AgentArchitecture.gem_relative_file('prompts/agent_engineering/agent_workflow_architect')
     default_llm :gpt4o
   end
 
